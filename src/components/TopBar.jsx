@@ -11,11 +11,11 @@ const TopBar = () => {
   return (
     <Navbar expand="lg" className="linkedin-navbar bg-white shadow-sm">
       <Container fluid className="p-0">
-        <Navbar.Brand href="#" className="me-3 me-lg-4">
+        <Navbar.Brand href="#" className="me-1">
           <i className="bi bi-linkedin text-primary fs-2"></i>
         </Navbar.Brand>
 
-        <div className="linkedin-search-container flex-grow-1 mx-lg-4 mb-3 mb-md-0">
+        <div className="linkedin-search-container flex-grow-1 mb-3 mb-md-0">
           <div className="linkedin-search ">
             <i className="bi bi-search search-icon"></i>
             <Form.Control type="search" placeholder="Cerca" className="search-input" aria-label="Cerca su LinkedIn" />
