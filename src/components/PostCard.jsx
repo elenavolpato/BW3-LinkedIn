@@ -59,9 +59,9 @@ function PostCard(props) {
                     alt="foto profilo"
                 />
                 <div className="post-profile">
-                    <p className="mb-0 fs-6 fw-bold">Nome profilo {props.name}</p>
-                    <p className="mb-0">posizione lavorativa {props.position}</p>
-                    <p className="mb-0">data del post {props.date}</p>
+                    <p className="mb-0 fs-6 fw-bold">{props.name}</p>
+                    <p className="mb-0">{props.position}</p>
+                    <p className="mb-0">{props.date}</p>
                 </div>
             </div>
 
