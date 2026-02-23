@@ -77,10 +77,7 @@ const TopBar = () => {
                   <div>
                     <div className="d-flex align-items-center gap-1">
                       <h5 className="mb-0 fs-5">Elena</h5>
-                      <i
-                        className="bi bi-check-circle-fill"
-                        style={{ fontSize: "1.1rem" }} // dimensione simile al badge LI
-                      ></i>
+                      <i className="bi bi-check-circle-fill" style={{ fontSize: "1.1rem" }}></i>
                     </div>
                     <p>fasdfdasfasdfsdsfaadsfasfsdaffafdsfdsaf</p>
                   </div>
