@@ -1,6 +1,10 @@
-import Footer from "../components/Footer";
+import RightSideBar from "../components/RightSideBar";
 
 const Feed = () => {
-  return <Footer />;
+  return (
+    <>
+      <RightSideBar />
+    </>
+  );
 };
 export default Feed;
