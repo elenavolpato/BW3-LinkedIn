@@ -175,6 +175,14 @@
   word-break: break-word;
 }
 
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: transparent;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (max-width: 991px) {
   .linkedin-navbar {
     height: auto;
