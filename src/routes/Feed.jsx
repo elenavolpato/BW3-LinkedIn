@@ -40,10 +40,7 @@ const Feed = () => {
 
   return (
     // post
-    <Container
-      fluid
-      className="feed-container"
-    >
+    <Container className="feed-container">
       <Row className="justify-content-center">
         {/* colonna sx */}
         <Col md={3}>
