@@ -145,6 +145,36 @@
   color: inherit;
 }
 
+.buttonViewProfile {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  border: 1px solid #0a66c2;
+}
+
+.buttonViewProfile:hover {
+  background-color: #ebf4fd !important;
+  border-color: #0a66c2 !important;
+  color: #074788 !important;
+  border: 2px solid #000 !important;
+}
+
+.dropdown-menu-end {
+  width: 300px;
+}
+
+.dropdown-menu .dropdown-item {
+  white-space: normal;
+}
+
+.dropdown-menu .dropdown-item .text-secondary {
+  white-space: normal;
+}
+
+.dropdown-menu p {
+  word-break: break-word;
+}
+
 @media (max-width: 991px) {
   .linkedin-navbar {
     height: auto;

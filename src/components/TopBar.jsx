@@ -15,8 +15,8 @@ const TopBar = () => {
           <i className="bi bi-linkedin text-primary fs-2"></i>
         </Navbar.Brand>
 
-        <div className="linkedin-search-container flex-grow-1 mx-lg-4">
-          <div className="linkedin-search">
+        <div className="linkedin-search-container flex-grow-1 mx-lg-4 mb-3 mb-md-0">
+          <div className="linkedin-search ">
             <i className="bi bi-search search-icon"></i>
             <Form.Control type="search" placeholder="Cerca" className="search-input" aria-label="Cerca su LinkedIn" />
           </div>
@@ -77,17 +77,40 @@ const TopBar = () => {
                   <div>
                     <div className="d-flex align-items-center gap-1">
                       <h5 className="mb-0 fs-5">Elena</h5>
-                      <i className="bi bi-check-circle-fill" style={{ fontSize: "1.1rem" }}></i>
+                      <i className="bi bi-shield-check" style={{ fontSize: "1.1rem" }}></i>
                     </div>
                     <p>fasdfdasfasdfsdsfaadsfasfsdaffafdsfdsaf</p>
                   </div>
                 </div>
-                <Button className=" d-block w-100 text-primary bg-light rounded-2 py-0">Visualizza profilo</Button>
+                <Button className=" d-block w-100 text-primary bg-light rounded-5 py-0 buttonViewProfile">Visualizza profilo</Button>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#settings">Impostazioni e privacy</NavDropdown.Item>
+              <NavDropdown.Item href="#settings">
+                <h6 className="mb-0">Account</h6>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <span className="text-secondary">Impostazioni e privacy</span>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <span className="text-secondary">Guida</span>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <span className="text-secondary">Lingua</span>
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#logout">Esci</NavDropdown.Item>
+              <NavDropdown.Item href="#settings" className="d-flex flex-column">
+                <h6 className="mb-0">Gestisci</h6>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <span className="text-secondary">Post e attivitá</span>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <span className="text-secondary">Account per la pubblicazione di offerte di lavoro</span>
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#logout" className="text-secondary">
+                Esci
+              </NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown
