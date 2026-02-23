@@ -54,13 +54,7 @@ const TopBar = () => {
             <NavDropdown
               title={
                 <div className="d-flex flex-column align-items-center">
-                  <img
-                    src="https://avatar.iran.liara.run/public/boy?username=tu-profilo"
-                    alt="Il tuo profilo"
-                    className="nav-profile-avatar rounded-circle mb-1"
-                    width="28"
-                    height="28"
-                  />
+                  <img src="https://placedog.net/300/200" alt="Il tuo profilo" className="nav-profile-avatar rounded-circle mb-1" width="28" height="28" />
 
                   <div className="d-flex align-items-center custom-caret-parent">
                     <span className="nav-text me-1">Tu</span>
@@ -73,7 +67,7 @@ const TopBar = () => {
             >
               <NavDropdown.Item href="#profile">
                 <div className="d-flex gap-1">
-                  <img src="https://avatar.iran.liara.run/public/boy?username=tu-profilo" width="40" height="40" alt="Il tuo profilo" />
+                  <img src="https://placedog.net/300/200" className="rounded-4" width="40" height="40" alt="Il tuo profilo" />
                   <div>
                     <div className="d-flex align-items-center gap-1">
                       <h5 className="mb-0 fs-5">Elena</h5>
