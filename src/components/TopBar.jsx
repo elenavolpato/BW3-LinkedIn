@@ -119,7 +119,7 @@ const TopBar = () => {
               }
               id="profile-dropdown"
               align="end"
-              className="nav-item-custom no-caret px-0 border-start"
+              className="nav-item-custom no-caret px-0 py-0 border-start"
             >
               <NavDropdown.Divider />
               <NavDropdown.Item href="#settings">Impostazioni e privacy</NavDropdown.Item>
