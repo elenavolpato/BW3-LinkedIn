@@ -121,10 +121,18 @@ const TopBar = () => {
               align="end"
               className="nav-item-custom no-caret px-0 py-0 border-start"
             >
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#settings">Impostazioni e privacy</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#logout">Esci</NavDropdown.Item>
+              <NavDropdown.Item href="#settings" className="mb-4">
+                <h3>Le mie app</h3>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#settings">
+                <h6>Vendi</h6>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#settings">
+                <h6>Gruppi</h6>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#logout">
+                <small className="text-secondary">Talent</small>
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
