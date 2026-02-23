@@ -1,16 +1,12 @@
-# React + Vite
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- GET https://striveschool-api.herokuapp.com/api/profile/ // Ritorna la lista dei profili utente
+- GET https://striveschool-api.herokuapp.com/api/profile/me // Ritorna il tuo profilo
+- GET https://striveschool-api.herokuapp.com/api/profile/:userId // Ritorna un profilo specifico
+- PUT https://striveschool-api.herokuapp.com/api/profile/ // Aggiorna il profilo utente
 
-Currently, two official plugins are available:
+PROFILI:- GET https://striveschool-api.herokuapp.com/api/profile/ // Ritorna la lista dei profili utente- GET https://striveschool-api.herokuapp.com/api/profile/me // Ritorna il tuo profilo- GET https://striveschool-api.herokuapp.com/api/profile/:userId // Ritorna un profilo specifico- PUT https://striveschool-api.herokuapp.com/api/profile/ // Aggiorna il profilo utenteModello del PROFILO:{  "name": "Mario",  "surname": "Rossi",  "email": "mario@rossi.it",  "username": "mario88",  "bio": "Freelance developer",  "title": "Full Stack Web Developer",  "area": "Milan",  "image": ..., // SERVER GENERATED, modificabile  "createdAt": "2019-09-20T08:53:07.094Z", // SERVER GENERATED  "updatedAt": "2019-09-20T09:00:46.977Z", // SERVER GENERATED  "\_\_v": 0, // SERVER GENERATED  "\_id": "5d84937322b7b54d848eb41b", // SERVER GENERATED}
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Suggerimenti:
 
-## React Compiler
-
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Dividi la pagina in componenti riutilizzabiliDefinisci come team chi farà cosaQuando fai il fetch dell'utente attuale, salva l'informazione nel Redux Store cosicché ogni componente possa accedere all'informazione successivamente (es. il componente Navbar)
