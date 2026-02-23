@@ -39,8 +39,6 @@ const Feed = () => {
 
   return (
 
-    // QUA NAVBAR
-
     // post  
     <Container fluid className="feed-container">
       <Row className="justify-content-center">
