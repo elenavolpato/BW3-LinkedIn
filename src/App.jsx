@@ -1,26 +1,22 @@
-import "./App.css"
-import "bootstrap/dist/css/bootstrap.min.css"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Feed from "./routes/Feed"
-import Profile from "./routes/Profile"
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import TopNavbar from "./components/TopNavbar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <TopNavbar />
         <Routes>
-          <Route
-            path="/"
-            element={<Feed />}
-          />
-          <Route
-            path="/profile"
-            element={<Profile />}
-          />
+          {/* <Route path="/" element={} />
+          <Route path="/profile" element={} /> */}
         </Routes>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
