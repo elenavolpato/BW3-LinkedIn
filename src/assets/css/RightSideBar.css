@@ -8,9 +8,9 @@
   flex-direction: column;
 }
 
-.container {
+/* .container {
   max-width: 400px;
-}
+} */
 
 .title {
   display: flex;
