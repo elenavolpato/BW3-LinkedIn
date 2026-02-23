@@ -1,32 +1,33 @@
 import PostCard from "../components/PostCard"
+import "../assets/css/feed.css"
+import RightSideBar from "../components/RightSideBar"
+import LeftSidebar from "../components/LeftSideBar"
+import { Container, Row, Col } from "react-bootstrap"
 import { useEffect, useState } from "react"
-import "./feed.css"
-import { Container, Col, Row } from "react-bootstrap"
-
 
 const Feed = () => {
-
   const [posts, setPosts] = useState([])
 
-  const fetchURL = 'https://striveschool-api.herokuapp.com/api/posts/'
-  const apiKEy = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40'
+  const fetchURL = "https://striveschool-api.herokuapp.com/api/posts/"
+  const apiKEy =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
 
   const getPosts = () => {
     fetch(fetchURL, {
       headers: {
-        authorization: 'Bearer ' + apiKEy
-      }
+        authorization: "Bearer " + apiKEy,
+      },
     })
       .then((res) => {
         if (res.ok) {
           return res.json()
         } else {
-          throw new Error('Errore nel recupero dei post')
+          throw new Error("Errore nel recupero dei post")
         }
       })
       .then((data) => {
         console.log(data)
-        setPosts(data);
+        setPosts(data)
       })
       .catch((err) => {
         console.log(err)
@@ -38,13 +39,15 @@ const Feed = () => {
   }, [])
 
   return (
-
-    // post  
-    <Container fluid className="feed-container">
+    // post
+    <Container
+      fluid
+      className="feed-container"
+    >
       <Row className="justify-content-center">
-
         {/* colonna sx */}
         <Col md={3}>
+          <LeftSidebar />
         </Col>
 
         <Col md={6}>
@@ -64,14 +67,13 @@ const Feed = () => {
               video={post.video}
             />
           ))}
-
         </Col>
         {/* colonna dx */}
-        <Col md={3}></Col>
+        <Col md={3}>
+          <RightSideBar />
+        </Col>
       </Row>
     </Container>
   )
-
-
 }
 export default Feed
