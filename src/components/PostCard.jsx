@@ -9,7 +9,7 @@ function PostCard(props) {
     const dispatch = useDispatch();
     const descRef = useRef(null);
 
-    const LINES = 3;
+    const lines = 3;
     const postId = props.id;
 
     const expanded = useSelector(
@@ -22,10 +22,10 @@ function PostCard(props) {
         const el = descRef.current;
         if (!el) return false;
 
-        // Se è espanso, deve esistere il bottone per poter richiudere
+        // per "mostra meno"
         if (expanded) return true;
 
-        // Se il contenuto reale supera quello visibile => clamp attivo
+        // per il clamp a 3 righe: se il testo è più alto di quello che ci sta in 3 righe, mostro "altro"
         return el.scrollHeight > el.clientHeight + 1;
     };
 
@@ -34,9 +34,9 @@ function PostCard(props) {
         const next = computeShouldShow();
         setShowToggle((prev) => (prev === next ? prev : next));
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.description, expanded, LINES]);
+    }, [props.description, expanded, lines]);
 
-    // Misura su resize (responsive)
+    // per adaattarlo responsivamente
     useEffect(() => {
         const onResize = () => {
             const next = computeShouldShow();
@@ -46,10 +46,11 @@ function PostCard(props) {
         window.addEventListener("resize", onResize);
         return () => window.removeEventListener("resize", onResize);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.description, expanded, LINES]);
+    }, [props.description, expanded, lines]);
 
     return (
         <div className="post-card">
+
             {/* caption */}
             <div className="post-caption">
                 <img
@@ -72,7 +73,7 @@ function PostCard(props) {
                     style={{
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
-                        WebkitLineClamp: expanded ? "initial" : LINES,
+                        WebkitLineClamp: expanded ? "initial" : lines,
                         overflow: expanded ? "visible" : "hidden",
                     }}
                 >
@@ -85,9 +86,35 @@ function PostCard(props) {
                         className="post-desc-toggle p-0"
                         onClick={() => dispatch(togglePostExpanded(postId))}
                     >
-                        {expanded ? "Mostra meno" : "Altro"}
+                        {expanded ? "Mostra meno" : "Mostra di più"}
                     </Button>
                 )}
+            </div>
+
+            {/* contenuto immagine/video */}
+            <div>
+                {props.img ?
+                    (<img
+                        className="post-media-img"
+                        src={props.img}
+                        alt="contenuto del post" />) :
+                    props.video ?
+                        (<video
+                            className="post-media-video"
+                            src={props.video}
+                            controls
+                            preload
+                        ></video>) :
+                        null}
+            </div>
+
+            {/* pulsanti */}
+            <div className="post-buttons">
+                <button className="post-button">Consiglia</button>
+                <button className="post-button">Commenta</button>
+                <button className="post-button">Diffondi il post</button>
+                <button className="post-button">Invia</button>
+
             </div>
         </div>
     );

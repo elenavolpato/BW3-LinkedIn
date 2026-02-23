@@ -1,8 +1,10 @@
 import PostCard from "../components/PostCard"
+import "./feed.css"
+
 
 const Feed = () => {
   return (
-    <div>
+    <div className="feed">
       <h1>Feed</h1>
       <PostCard
         id={1}
