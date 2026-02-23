@@ -33,7 +33,7 @@ const RightSideBar = () => {
         <div className=" rompicapo d-flex">
           <img
             className="rompicapo-img"
-            fetchpriority="low"
+            fetchPriority="low"
             alt=""
             src="https://media.licdn.com/media/AAYIBATzAAwAAQAAAAAAAM5DCu1ciPE1T06Vu5hhAwP0xw.png"
             data-loaded="true"
