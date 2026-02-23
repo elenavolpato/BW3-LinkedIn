@@ -1,5 +1,5 @@
-import { Container, Row, Col, Button, Card, CardImg } from "react-bootstrap"
-import "../assets/css/PersonalInfo.css"
+import { Container, Row, Col, Button, Card, CardImg } from "react-bootstrap";
+import "../assets/css/PersonalInfo.css";
 
 const PersonalInfo = () => {
   return (
@@ -25,7 +25,7 @@ const PersonalInfo = () => {
               <Col md={6}>
                 <div className="d-flex align-items-center gap-2 mb-0 pb-0">
                   <h1 className="mb-0 pb-0">Name name</h1>
-                  <i class="bi bi-shield-check"></i>
+                  <i className="bi bi-shield-check"></i>
                   <h6 className="text-black-50 pt-2"> She/Her</h6>
                 </div>
                 <p className="no-margin">Job Title</p>
@@ -33,18 +33,13 @@ const PersonalInfo = () => {
                   Cidade, Mundo, Universo ·&nbsp;
                   <span className="text-primary fw-bold">Contact info</span>
                 </p>
-                <p className="text-primary fw-bold">
-                  100.000.000 followers · 500+ connections
-                </p>
+                <p className="text-primary fw-bold">100.000.000 followers · 500+ connections</p>
 
                 <div className="position-relative work-status-box rounded p-3">
                   <i className="bi bi-pencil position-absolute fw-bold top-0 end-0 pt-3 pe-4"></i>
                   <p className="fw-bold no-margin">Open to work</p>
                   <p>Javascript developer roles</p>
-                  <Button
-                    className="border-0 m-0 p-0"
-                    variant="outline-primary"
-                  >
+                  <Button className="border-0 m-0 p-0" variant="outline-primary">
                     Show details
                   </Button>
                 </div>
@@ -58,47 +53,23 @@ const PersonalInfo = () => {
                       aria-hidden="true"
                       viewBox="0 0 128 128"
                       data-token-id="358"
-                      class="_34d7bc0d f306d0a7 cb3e98fc _2f025f10 _05d79b4e"
+                      className="_34d7bc0d f306d0a7 cb3e98fc _2f025f10 _05d79b4e"
                       role="img"
                       fetchPriority="low"
                       aria-label=""
                       preserveAspectRatio="xMidYMid slice"
                     >
                       <g display="var(--svgDisplayLight)">
-                        <path
-                          fill="#e7e2dc"
-                          d="M0 0h128v128H0z"
-                        ></path>
-                        <path
-                          fill="#9db3c8"
-                          d="M48 16h64v112H48z"
-                        ></path>
-                        <path
-                          fill="#788fa5"
-                          d="M16 80h32v48H16z"
-                        ></path>
-                        <path
-                          fill="#56687a"
-                          d="M48 80h32v48H48z"
-                        ></path>
+                        <path fill="#e7e2dc" d="M0 0h128v128H0z"></path>
+                        <path fill="#9db3c8" d="M48 16h64v112H48z"></path>
+                        <path fill="#788fa5" d="M16 80h32v48H16z"></path>
+                        <path fill="#56687a" d="M48 80h32v48H48z"></path>
                       </g>
                       <g display="var(--svgDisplayDark)">
-                        <path
-                          fill="#38434f"
-                          d="M0 0h128v128H0z"
-                        ></path>
-                        <path
-                          fill="#9db3c8"
-                          d="M48 16h64v112H48z"
-                        ></path>
-                        <path
-                          fill="#788fa5"
-                          d="M16 80h32v48H16z"
-                        ></path>
-                        <path
-                          fill="#56687a"
-                          d="M48 80h32v48H48z"
-                        ></path>
+                        <path fill="#38434f" d="M0 0h128v128H0z"></path>
+                        <path fill="#9db3c8" d="M48 16h64v112H48z"></path>
+                        <path fill="#788fa5" d="M16 80h32v48H16z"></path>
+                        <path fill="#56687a" d="M48 80h32v48H48z"></path>
                       </g>
                     </svg>
                   </div>
@@ -110,7 +81,7 @@ const PersonalInfo = () => {
         </Card>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default PersonalInfo
+export default PersonalInfo;
