@@ -76,7 +76,7 @@ const TopBar = () => {
                     <p>fasdfdasfasdfsdsfaadsfasfsdaffafdsfdsaf</p>
                   </div>
                 </div>
-                <Button className=" d-block w-100 text-primary bg-light rounded-5 py-0 buttonViewProfile">Visualizza profilo</Button>
+                <Button className=" d-block w-100 text-primary bg-light rounded-5 py-0 buttonViewProfile fw-bold">Visualizza profilo</Button>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#settings">
