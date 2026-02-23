@@ -1,0 +1,38 @@
+.post-caption {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.post-img {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.post-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-size: 10px;
+}
+
+.post-description {
+    margin: 0;
+    white-space: normal;
+}
+
+.post-desc-toggle {
+    background: none;
+    border: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.594);
+    cursor: pointer;
+    font: inherit;
+}
+
+.post-desc-toggle:hover {
+    text-decoration: underline;
+    background: none;
+    color: rgba(0, 0, 0, 0.594);
+}
