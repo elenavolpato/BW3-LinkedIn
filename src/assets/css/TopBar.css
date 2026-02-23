@@ -1,145 +1,180 @@
+.linkedin-navbar {
+  height: 56px;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+}
+
 .linkedin-search-container {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 480px;
-  transition: max-width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-width: 500px;
+  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .linkedin-search {
   position: relative;
-  display: flex;
-  align-items: center;
   width: 240px;
-  height: 40px;
-  background-color: #ffffff;
-  border: 1px solid #c0c4c8;
+  height: 36px;
+  background-color: #eef3f8;
+  border: 1px solid #9c9797;
   border-radius: 40px;
   overflow: hidden;
   transition:
-    width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .search-icon {
   position: absolute;
-  left: 16px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: #666666;
+  color: #000000;
   font-size: 18px;
   pointer-events: none;
-  transition: left 0.35s ease;
+  transition: left 0.3s ease;
 }
 
 .search-input {
-  background: transparent;
   border: none;
   width: 100%;
   height: 100%;
-  padding: 0 20px 0 52px;
-  font-size: 15px;
-  color: #000000;
-  opacity: 1;
+  padding: 0 16px 0 44px;
+  font-size: 14px;
+  color: #000;
+  outline: none;
 }
 
 .search-input::placeholder {
-  color: #76797d;
+  color: #555;
   opacity: 1;
-  font-weight: 400;
 }
 
 .linkedin-search-container:focus-within .linkedin-search {
   width: 100%;
-  max-width: 460px;
-  border-color: #0a66c2;
-  box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.12);
+  max-width: 500px;
+  background-color: #ffffff;
+  border-color: #000;
 }
 
 .linkedin-search-container:focus-within .search-icon {
-  left: 14px;
+  left: 12px;
 }
 
-.nav-item {
+.nav-item-custom {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 3px;
-  padding: 6px 10px;
-  min-width: 64px;
-  color: #333333;
-  font-size: 0.8125rem;
-  line-height: 1.15;
-  transition: color 0.2s ease;
-  cursor: pointer;
+  padding: 4px 10px;
+  min-width: 60px;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.2;
+  transition: color 0.15s ease;
 }
 
-.nav-item:hover,
-.nav-item:focus {
+.nav-item-custom:hover,
+.nav-item-custom:focus {
   color: #0a66c2;
-  outline: none;
 }
 
-.nav-item.active {
+.nav-item-custom.active {
   color: #0a66c2;
   font-weight: 600;
 }
 
 .nav-icon {
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 22px;
+  margin-bottom: 2px;
 }
 
 .nav-text {
-  font-size: 0.75rem;
-  line-height: 1.2;
+  font-size: 11px;
   white-space: nowrap;
 }
 
+.nav-profile-avatar {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  margin-bottom: 2px;
+}
+
+.profile-dropdown .dropdown-toggle {
+  padding: 4px 8px;
+  display: block;
+}
+
+.profile-dropdown .dropdown-toggle::after {
+  margin-left: 4px;
+  vertical-align: middle;
+  font-size: 0.75rem;
+  border-top-color: #555;
+}
+
+.profile-dropdown.show .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.profile-dropdown .dropdown-toggle > div:last-child {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.no-caret .dropdown-toggle::after {
+  display: none;
+}
+
+.custom-caret-parent::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  color: inherit;
+}
+
 @media (max-width: 991px) {
-  .linkedin-search-container {
-    max-width: none;
+  .linkedin-navbar {
+    height: auto;
   }
 
   .linkedin-search {
-    width: 100% !important;
-    max-width: none !important;
-    border-radius: 8px;
+    height: 40px;
+    border-radius: 6px;
   }
 
   .search-input {
-    padding: 0 16px 0 48px;
+    padding: 0 14px 0 44px;
     font-size: 15px;
   }
 
-  .nav-item {
-    padding: 8px 14px;
-    min-width: 72px;
-    gap: 4px;
+  .nav-item-custom {
+    padding: 6px 8px;
+    min-width: 64px;
   }
 
   .nav-icon {
-    font-size: 1.625rem;
+    font-size: 24px;
   }
 
   .nav-text {
-    font-size: 0.8125rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .nav-item {
-    padding: 8px 14px;
-    gap: 4px;
+    font-size: 12px;
   }
 
-  .nav-icon {
-    font-size: 1.375rem;
-  }
-
-  .nav-text {
-    font-size: 0.875rem;
+  .nav-profile-avatar {
+    width: 32px;
+    height: 32px;
   }
 }
