@@ -52,7 +52,11 @@ const Feed = () => {
             <PostCard
               key={post._id}
               id={post._id}
-              name={post.user.name}
+              name={
+                post.user?.name && post.user.name.trim() !== ""
+                  ? post.user.name
+                  : "Ero troppo pigro per metterlo"
+              }
               position={post.user.title}
               date={new Date(post.createdAt).toLocaleDateString()}
               description={post.text}

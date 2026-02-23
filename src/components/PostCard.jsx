@@ -96,7 +96,7 @@ function PostCard(props) {
                 {props.img ?
                     (<img
                         className="post-media-img"
-                        src={props.img}
+                        src={props.image}
                         alt="contenuto del post" />) :
                     props.video ?
                         (<video
