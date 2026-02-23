@@ -1,0 +1,32 @@
+body {
+  background-color: #f4f2ee;
+}
+
+.linkedin-notizie {
+  background-color: white;
+  padding: 2%;
+  border-radius: 10px;
+  border-color: #dfdeda;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 350px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #62615f;
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  color: #62615f;
+  padding: 0;
+}

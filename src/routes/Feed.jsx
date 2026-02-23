@@ -1,4 +1,6 @@
+import Footer from "../components/Footer";
+
 const Feed = () => {
-  return <div>feed</div>
-}
-export default Feed
+  return <Footer />;
+};
+export default Feed;
