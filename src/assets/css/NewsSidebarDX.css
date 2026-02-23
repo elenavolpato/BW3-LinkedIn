@@ -1,0 +1,21 @@
+.news-item p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+.news-item span {
+  font-size: 14px;
+  color: #62615f;
+  margin-bottom: 7px;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.background-news :hover {
+  background-color: #e0e0e0;
+}
