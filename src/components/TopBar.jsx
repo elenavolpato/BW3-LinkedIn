@@ -9,8 +9,8 @@ import { Button } from "react-bootstrap";
 
 const TopBar = () => {
   return (
-    <Navbar expand="lg" className="linkedin-navbar bg-white shadow-sm px-0 px-md-5">
-      <Container fluid className="px-3 px-lg-4">
+    <Navbar expand="lg" className="linkedin-navbar bg-white shadow-sm">
+      <Container fluid className="p-0">
         <Navbar.Brand href="#" className="me-3 me-lg-4">
           <i className="bi bi-linkedin text-primary fs-2"></i>
         </Navbar.Brand>

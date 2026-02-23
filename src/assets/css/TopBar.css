@@ -5,6 +5,7 @@
   top: 0;
   z-index: 1000;
   background-color: white;
+  padding-inline: 7%;
 }
 
 .linkedin-search-container {
@@ -123,7 +124,7 @@
   transform: rotate(180deg);
 }
 
-.profile-dropdown .dropdown-toggle > div:last-child {
+.profile-dropdown .dropdown-toggle>div:last-child {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
