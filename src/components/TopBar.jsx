@@ -3,15 +3,24 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import "../assets/css/TopBar.css";
 
 import { Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { logoutUser } from "../redux/actions/loginAuth";
 
 const TopBar = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleLogout = function () {
+    dispatch(logoutUser());
+    navigate("/login");
+  };
+
+  const { isAuthenticated } = useSelector((state) => state.auth || {});
 
   return (
     <Navbar expand="lg" className="linkedin-navbar bg-white shadow-sm">
@@ -109,9 +118,11 @@ const TopBar = () => {
                 <span className="text-secondary">Account per la pubblicazione di offerte di lavoro</span>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#logout" className="text-secondary">
-                Esci
-              </NavDropdown.Item>
+              {isAuthenticated && (
+                <NavDropdown.Item className="text-secondary" onClick={handleLogout}>
+                  Esci
+                </NavDropdown.Item>
+              )}
             </NavDropdown>
 
             <NavDropdown
