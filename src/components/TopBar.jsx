@@ -82,7 +82,7 @@ const TopBar = () => {
                     <p>fasdfdasfasdfsdsfaadsfasfsdaffafdsfdsaf</p>
                   </div>
                 </div>
-                <Button className=" d-block w-100">Visualizza profilo</Button>
+                <Button className=" d-block w-100 text-primary bg-light rounded-2 py-0">Visualizza profilo</Button>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#settings">Impostazioni e privacy</NavDropdown.Item>
