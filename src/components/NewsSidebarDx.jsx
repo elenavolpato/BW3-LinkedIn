@@ -1,4 +1,3 @@
-import "bootstrap-icons/font/bootstrap-icons.css";
 import "../assets/css/NewsSidebarDx.css";
 
 const NewsSidebarDx = () => {

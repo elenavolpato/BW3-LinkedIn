@@ -1,6 +1,7 @@
 import PostCard from "../components/PostCard";
 import "./feed.css";
 import RightSideBar from "../components/RightSideBar";
+import LeftSidebar from "../components/LeftSideBar";
 
 const Feed = () => {
   return (
@@ -16,6 +17,7 @@ const Feed = () => {
         />
       </div>
       <RightSideBar />
+      <LeftSidebar />
     </>
   );
 };

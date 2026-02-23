@@ -1,7 +1,6 @@
 import { Container, Button } from "react-bootstrap";
 import "../assets/css/RightSideBar.css";
 import Footer from "./Footer";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import NewsSidebarDx from "./NewsSidebarDx";
 
 const RightSideBar = () => {
