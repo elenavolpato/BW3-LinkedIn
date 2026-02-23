@@ -5,24 +5,27 @@ import Feed from "./routes/Feed"
 import Profile from "./routes/Profile"
 import { Provider } from "react-redux"
 import { store } from "./redux/store"
-import Footer from "./components/Footer"
+import TopBar from "./components/TopBar"
 
 function App() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={<Feed />}
-          />
-          <Route
-            path="/profile"
-            element={<Profile />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+    <>
+      <Provider store={store}>
+        <BrowserRouter>
+          <TopBar />
+          <Routes>
+            <Route
+              path="/"
+              element={<Feed />}
+            />
+            <Route
+              path="/profile"
+              element={<Profile />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    </>
   )
 }
 
