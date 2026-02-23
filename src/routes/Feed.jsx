@@ -1,5 +1,5 @@
 import PostCard from "../components/PostCard"
-import "./feed.css"
+import "../assets/css/feed.css"
 import RightSideBar from "../components/RightSideBar"
 import LeftSidebar from "../components/LeftSideBar"
 import { Container, Row, Col } from "react-bootstrap"
