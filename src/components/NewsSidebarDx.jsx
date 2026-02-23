@@ -1,4 +1,4 @@
-import "../assets/css/NewsSidebarDx.css";
+import "../assets/css/NewsSidebarDx.css"
 
 const NewsSidebarDx = () => {
   return (
@@ -8,7 +8,7 @@ const NewsSidebarDx = () => {
         <span>2h fa • 336 lettori</span>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NewsSidebarDx;
+export default NewsSidebarDx
