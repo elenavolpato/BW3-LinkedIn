@@ -1,10 +1,4 @@
-import PersonalInfo from "../components/PersonalInfo"
-
 const Profile = () => {
-  return (
-    <div>
-      <PersonalInfo />
-    </div>
-  )
+  return <div>Profile</div>
 }
 export default Profile
