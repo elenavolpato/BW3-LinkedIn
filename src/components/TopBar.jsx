@@ -25,7 +25,7 @@ const TopBar = () => {
         <Navbar.Toggle aria-controls="navbarScroll" />
 
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="ms-auto align-items-center gap-1 gap-lg-3" navbarScroll>
+          <Nav className="ms-auto align-items-center" navbarScroll>
             <Nav.Link href="#home" className="nav-item-custom">
               <i className="bi bi-house-door-fill nav-icon"></i>
               <span className="nav-text">Home</span>
