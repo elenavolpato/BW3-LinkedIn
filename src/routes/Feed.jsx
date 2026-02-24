@@ -28,6 +28,7 @@ const Feed = () => {
         }
       })
       .then((data) => {
+
         const sortedPosts = [...data].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         const limit = sortedPosts.slice(0, 20);
 
