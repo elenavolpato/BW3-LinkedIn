@@ -12,7 +12,8 @@ const fakeCredentials = {
   },
   lucaverdi: {
     password: "test456",
-    token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMGRkNDBiYzFkZTAwMTU3N2I3OTkiLCJpYXQiOjE3NzE4NzAwMDAsImV4cCI6MTc3MzA0NzAwMH0.xxxx", // ← TOKEN DI UN ALTRO UTENTE (cambia o lascia vuoto)
+    token:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40",
   },
 };
 
