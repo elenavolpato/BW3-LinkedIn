@@ -41,7 +41,7 @@ const FormazioneProfile = function () {
                 <img
                   src="https://media.licdn.com/dms/image/v2/C4D0BAQG12formuFdJg/company-logo_200_200/company-logo_200_200/0/1630469288270/technion_logo?e=1773273600&v=beta&t=bhMoWlQ0RLm-o_Grcqw7cw8bVc0q3OqtwbtMkIGy-a0"
                   alt="NGS-Group"
-                  className="imgFormazion"
+                  className="imgFormazion mt-4"
                 />
               </Col>
               <Col xs={11} className="mt-3">
