@@ -58,7 +58,7 @@ const Feed = () => {
       <Row className="justify-content-center">
 
         {/* colonna sx */}
-        <Col md={3}>
+        <Col md={3} className="sticky-side" >
           <LeftSidebar />
         </Col>
 
@@ -94,7 +94,7 @@ const Feed = () => {
         </Col>
 
         {/* colonna dx */}
-        <Col md={3}>
+        <Col md={3} className="sticky-side">
           <RightSideBar />
         </Col>
       </Row>
