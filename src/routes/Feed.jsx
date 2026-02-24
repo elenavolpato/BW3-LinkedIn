@@ -29,9 +29,12 @@ const Feed = () => {
         }
       })
       .then((data) => {
-        console.log(data)
+        const sortedPosts = [...data].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        const limit = sortedPosts.slice(0, 20);
+
+        console.log(limit)
         setLoading(false)
-        setPosts(data)
+        setPosts(limit)
       })
       .catch((err) => {
         console.log(err)
