@@ -59,7 +59,7 @@ export const loginUser = (username, password) => (dispatch) => {
           console.log("Profilo ricevuto:", profileData);
           // Salva il profilo nel Redux store
           dispatch({
-            type: PROFILE_FETCH_SUCCESS, // ← cambia con la tua action type reale
+            type: PROFILE_FETCH_SUCCESS,
             payload: profileData,
           });
           console.log("Profilo caricato e salvato in Redux:", profileData.name, profileData.surname);

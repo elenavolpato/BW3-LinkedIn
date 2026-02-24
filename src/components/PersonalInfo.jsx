@@ -1,8 +1,62 @@
 import { Container, Row, Col, Button, Card, CardImg } from "react-bootstrap";
 import "../assets/css/PersonalInfo.css";
 import FormazioneProfile from "./FormazioneProfile";
+import { useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { POST } from "../redux/actions/postUiActions";
+import { PROFILE_FETCH_SUCCESS } from "../redux/actions/profileActions";
 
 const PersonalInfo = () => {
+  const dispatch = useDispatch();
+  const fileInputRef = useRef(null);
+  const profileData = useSelector((state) => state.profile?.profile);
+  const userId = profileData?._id;
+
+  const handleUpload = function (file) {
+    if (!file || !userId) {
+      alert("Manca file o ID utente");
+      return;
+    }
+
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Non sei autentificato");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("profile", file);
+
+    fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/picture`, {
+      method: POST,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    })
+      .then((res) => {
+        if (!res.ok) {
+          return res.text().then((text) => {
+            throw new Error(`Errore ${res.status}: ${text}`);
+          });
+        }
+        return res.json();
+      })
+
+      .then((data) => {
+        console.log("Update riuscito!", data);
+        dispatch({
+          type: PROFILE_FETCH_SUCCESS,
+          payload: data,
+        });
+      })
+
+      .catch((err) => {
+        console.log("Erore upload", err.message);
+        alert("Caricamento foto fallito:" + err.message);
+      });
+  };
+
   return (
     <>
       <Container className="mb-5">
@@ -16,20 +70,31 @@ const PersonalInfo = () => {
                 backgroundImage: "url(https://placedog.net/1200/300)",
               }}
             ></CardImg>
-            <img
-              src="https://placedog.net/180/180"
-              alt="profile img"
-              className="border border-5 border-white rounded-circle profile-img ms-3 z-1 position-relative"
-            />
+            <div
+              className=" position-relative ms-3 "
+              style={{ width: "175px", cursor: "pointer" }}
+              onClick={() => {
+                fileInputRef.current?.click(); // apre selettore file
+              }}
+            >
+              <img
+                src={profileData?.image}
+                alt="profile img"
+                style={{ width: "180px", height: "180px", cursor: "pointer" }}
+                className="border border-5 border-white rounded-circle profile-img ms-3 z-1 position-relative"
+              />
+            </div>
 
             <Row className="p-3 g-2">
               <Col md={6}>
                 <div className="d-flex align-items-center gap-2 mb-0 pb-0">
-                  <h1 className="mb-0 pb-0">Name name</h1>
+                  <h1 className="mb-0 pb-0">
+                    {profileData.name} {profileData.surname}
+                  </h1>
                   <i className="bi bi-shield-check"></i>
                   <h6 className="text-black-50 pt-2"> She/Her</h6>
                 </div>
-                <p className="no-margin">Job Title</p>
+                <p className="no-margin">{profileData?.title}</p>
                 <p className="text-black-50 ">
                   Cidade, Mundo, Universo ·&nbsp;
                   <span className="text-primary fw-bold">Contact info</span>
@@ -82,6 +147,19 @@ const PersonalInfo = () => {
         </Card>
       </Container>
       <FormazioneProfile />
+      <input
+        type="file"
+        accept="image/*"
+        ref={fileInputRef}
+        style={{ display: "none" }}
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (file) {
+            console.log("Hai scelto:", file.name, file.size, file.type);
+            handleUpload(file);
+          }
+        }}
+      />
     </>
   );
 };
