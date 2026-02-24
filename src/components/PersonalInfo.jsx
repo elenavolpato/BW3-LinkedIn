@@ -1,29 +1,23 @@
-import { Container, Row, Col, Button, Card, CardImg } from "react-bootstrap";
-import "../assets/css/PersonalInfo.css";
-import RightSideBarProfile from "./RightSidebarProfile";
-import FooterProfile from "./FooterProfile";
+import { Row, Col, Button, Card, CardImg } from "react-bootstrap"
+import "../assets/css/PersonalInfo.css"
 
 const PersonalInfo = () => {
   return (
-    <>
-      <Container>
-        <Row>
-          <Col lg={9} md={10} sx={12}>
-            <Card>
-              <Col className="position-relative">
-                <CardImg
-                  src="https://placedog.net/1200/300"
-                  alt="background image"
-                  className="position-relative profile-bg-img "
-                  style={{
-                    backgroundImage: "url(https://placedog.net/1200/300)",
-                  }}
-                ></CardImg>
-                <img
-                  src="../../public/profilo.png"
-                  alt="profile img"
-                  className="border border-5 border-white rounded-circle profile-img ms-3 z-1 position-relative"
-                />
+    <Card className="mb-3">
+      <Col className="position-relative">
+        <CardImg
+          src="https://placedog.net/1200/300"
+          alt="background image"
+          className="position-relative profile-bg-img "
+          style={{
+            backgroundImage: "url(https://placedog.net/1200/300)",
+          }}
+        ></CardImg>
+        <img
+          src="https://placedog.net/180/180"
+          alt="profile img"
+          className="border border-5 border-white rounded-circle profile-img ms-3 z-1 position-relative"
+        />
 
                 <Row className="p-3 g-2">
                   <Col md={6}>
@@ -84,8 +78,61 @@ const PersonalInfo = () => {
               </Col>
             </Card>
           </Col>
-          <Col lg={3} md={2} className="d-none d-lg-block">
-            <RightSideBarProfile />
+          <Col md={6}>
+            <div className="d-flex gap-3 ">
+              <div className="icon-company">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="company-accent-4"
+                  aria-hidden="true"
+                  viewBox="0 0 128 128"
+                  data-token-id="358"
+                  className="_34d7bc0d f306d0a7 cb3e98fc _2f025f10 _05d79b4e"
+                  role="img"
+                  fetchPriority="low"
+                  aria-label=""
+                  preserveAspectRatio="xMidYMid slice"
+                >
+                  <g display="var(--svgDisplayLight)">
+                    <path
+                      fill="#e7e2dc"
+                      d="M0 0h128v128H0z"
+                    ></path>
+                    <path
+                      fill="#9db3c8"
+                      d="M48 16h64v112H48z"
+                    ></path>
+                    <path
+                      fill="#788fa5"
+                      d="M16 80h32v48H16z"
+                    ></path>
+                    <path
+                      fill="#56687a"
+                      d="M48 80h32v48H48z"
+                    ></path>
+                  </g>
+                  <g display="var(--svgDisplayDark)">
+                    <path
+                      fill="#38434f"
+                      d="M0 0h128v128H0z"
+                    ></path>
+                    <path
+                      fill="#9db3c8"
+                      d="M48 16h64v112H48z"
+                    ></path>
+                    <path
+                      fill="#788fa5"
+                      d="M16 80h32v48H16z"
+                    ></path>
+                    <path
+                      fill="#56687a"
+                      d="M48 80h32v48H48z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <p>Amazing worker | Wherever</p>
+            </div>
           </Col>
         </Row>
         <FooterProfile />
@@ -94,4 +141,4 @@ const PersonalInfo = () => {
   );
 };
 
-export default PersonalInfo;
+export default PersonalInfo

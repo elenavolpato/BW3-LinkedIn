@@ -42,7 +42,7 @@ const users = [
 const RightSideBarProfile = () => {
   return (
     <>
-      <Container className="container-right-sidebar-profile d-flex flex-column gap-3 bg-white p-3">
+      <Container className="container-right-sidebar-profile d-flex flex-column bg-white p-3 " xs={1}>
         <div className="lingua-profilo">
           <div className="d-flex align-items-center justify-content-between gap-2">
             <h2>Lingua del profilo</h2>
