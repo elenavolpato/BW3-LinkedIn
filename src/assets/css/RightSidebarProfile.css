@@ -1,0 +1,16 @@
+.container-right-sidebar-profile {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  border-radius: 8px;
+}
+
+.lingua-profilo h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.lingua-profilo span {
+  font-size: 14px;
+  color: #62615f;
+}

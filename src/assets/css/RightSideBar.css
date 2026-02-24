@@ -8,10 +8,6 @@
   flex-direction: column;
 }
 
-/* .container {
-  max-width: 400px;
-} */
-
 .title {
   display: flex;
   align-items: center;
@@ -19,7 +15,7 @@
 }
 
 .title h2 {
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
