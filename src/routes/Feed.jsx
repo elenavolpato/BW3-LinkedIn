@@ -8,9 +8,9 @@ import LeftSidebar from "../components/LeftSideBar"
 import PostForm from "../components/PostForm"
 
 const Feed = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   const fetchURL = "https://striveschool-api.herokuapp.com/api/posts/"
   const apiKEy = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
@@ -56,7 +56,6 @@ const Feed = () => {
     // post
     <Container className="feed-container">
       <Row className="justify-content-center">
-
         {/* colonna sx */}
         <Col md={3} className="sticky-side" >
           <LeftSidebar />
@@ -68,9 +67,15 @@ const Feed = () => {
             onPostCreated={getPosts}
           />
           {loading ? (
-            <Spinner className="d-block mx-auto mt-5" animation="border" />
+            <Spinner
+              className="d-block mx-auto mt-5"
+              animation="border"
+            />
           ) : error ? (
-            <Alert className="text-center" variant="danger">
+            <Alert
+              className="text-center"
+              variant="danger"
+            >
               {error}
             </Alert>
           ) : (

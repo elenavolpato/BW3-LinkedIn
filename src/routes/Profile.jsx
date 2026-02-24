@@ -1,23 +1,28 @@
 import { Container, Row, Col } from "react-bootstrap"
+import ExperienceList from "../components/ExperienceList"
 import PersonalInfo from "../components/PersonalInfo"
-import ProfileAbout from "../components/ProfileAbout"
+import RightSidebarProfile from "../components/RightSidebarProfile"
+
 const Profile = () => {
   return (
-    <Container className="profile-container">
-
-      <Row className="justify-content-center">
-
-        <Col md={12} lg={9}>
-
+    <Container className="pt-3">
+      <Row>
+        <Col
+          lg={9}
+          md={10}
+          sx={12}
+        >
           <PersonalInfo />
-          <ProfileAbout />
-
+          <ExperienceList />
         </Col>
-
-        <Col lg={3}></Col>
-
+        <Col
+          lg={3}
+          md={2}
+          className="d-none d-lg-block"
+        >
+          <RightSidebarProfile />
+        </Col>
       </Row>
-
     </Container>
   )
 }
