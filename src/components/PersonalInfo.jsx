@@ -1,25 +1,28 @@
 import { Container, Row, Col, Button, Card, CardImg } from "react-bootstrap";
 import "../assets/css/PersonalInfo.css";
+import RightSideBarProfile from "./RightSidebarProfile";
 
 const PersonalInfo = () => {
   return (
     <>
       <Container>
-        <Card>
-          <Col className="position-relative">
-            <CardImg
-              src="https://placedog.net/1200/300"
-              alt="background image"
-              className="position-relative profile-bg-img "
-              style={{
-                backgroundImage: "url(https://placedog.net/1200/300)",
-              }}
-            ></CardImg>
-            <img
-              src="https://placedog.net/180/180"
-              alt="profile img"
-              className="border border-5 border-white rounded-circle profile-img ms-3 z-1 position-relative"
-            />
+       <Row className="p-3 g-2">
+          <Col lg={9} md={10} sx={12}>
+            <Card>
+              <Col className="position-relative">
+                <CardImg
+                  src="https://placedog.net/1200/300"
+                  alt="background image"
+                  className="position-relative profile-bg-img "
+                  style={{
+                    backgroundImage: "url(https://placedog.net/1200/300)",
+                  }}
+                ></CardImg>
+                <img
+                  src="../../public/profilo.png"
+                  alt="profile img"
+                  className="border border-5 border-white rounded-circle profile-img ms-3 z-1 position-relative"
+                />
 
             <Row className="p-3 g-2">
               <Col md={6}>
@@ -78,7 +81,7 @@ const PersonalInfo = () => {
               </Col>
             </Row>
           </Col>
-        </Card>
+        </Row>
       </Container>
     </>
   );
