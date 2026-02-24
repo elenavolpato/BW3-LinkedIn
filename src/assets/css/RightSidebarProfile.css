@@ -8,9 +8,14 @@
 .lingua-profilo h2 {
   font-size: 1.3rem;
   font-weight: 600;
+  margin-bottom: 0px;
 }
 
 .lingua-profilo span {
   font-size: 14px;
   color: #62615f;
+}
+
+.divider {
+  border-top: 1px solid #e0e0e0;
 }

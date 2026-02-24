@@ -1,5 +1,5 @@
 import "../assets/css/Footer.css";
-import { Container, Dropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 
 const Footer = () => {
   return (

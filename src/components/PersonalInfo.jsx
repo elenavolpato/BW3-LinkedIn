@@ -1,6 +1,7 @@
 import { Container, Row, Col, Button, Card, CardImg } from "react-bootstrap";
 import "../assets/css/PersonalInfo.css";
 import RightSideBarProfile from "./RightSidebarProfile";
+import FooterProfile from "./FooterProfile";
 
 const PersonalInfo = () => {
   return (
@@ -87,6 +88,7 @@ const PersonalInfo = () => {
             <RightSideBarProfile />
           </Col>
         </Row>
+        <FooterProfile />
       </Container>
     </>
   );
