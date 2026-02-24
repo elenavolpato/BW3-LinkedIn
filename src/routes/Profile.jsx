@@ -1,12 +1,13 @@
+import { Container } from "react-bootstrap"
 import ExperienceList from "../components/ExperienceList"
 import PersonalInfo from "../components/PersonalInfo"
 
 const Profile = () => {
   return (
-    <div>
+    <Container>
       <PersonalInfo />
       <ExperienceList />
-    </div>
+    </Container>
   )
 }
 export default Profile
