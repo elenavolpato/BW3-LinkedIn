@@ -12,6 +12,7 @@ import { Button } from "react-bootstrap";
 import { logoutUser } from "../redux/actions/loginAuth";
 
 const TopBar = () => {
+  const profileData = useSelector((state) => state.profile?.profile);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -81,13 +82,15 @@ const TopBar = () => {
             >
               <NavDropdown.Item>
                 <div className="d-flex gap-1" onClick={() => navigate("/profile")}>
-                  <img src="https://placedog.net/300/200" className="rounded-4" width="40" height="40" alt="Il tuo profilo" />
+                  <img src={profileData?.image} className="rounded-4" width="40" height="40" alt="Il tuo profilo" />
                   <div>
                     <div className="d-flex align-items-center gap-1">
-                      <h5 className="mb-0 fs-5">Elena</h5>
+                      <h5 className="mb-0 fs-5">
+                        {profileData?.name || "Nome"} {profileData?.surname || "Cognome"}
+                      </h5>
                       <i className="bi bi-shield-check" style={{ fontSize: "1.1rem" }}></i>
                     </div>
-                    <p>fasdfdasfasdfsdsfaadsfasfsdaffafdsfdsaf</p>
+                    <p>{profileData?.title}</p>
                   </div>
                 </div>
                 <Button className=" d-block w-100 text-primary bg-light rounded-5 py-0 buttonViewProfile fw-bold" onClick={() => navigate("/profile")}>
