@@ -36,24 +36,20 @@ const FormazioneProfile = function () {
                 </div>
               </Col>
             </Row>
-            <Row className="mx-5">
+            <Row className="mx-5 my-3">
               <Col xs={1}>
                 <img
                   src="https://media.licdn.com/dms/image/v2/C4D0BAQG12formuFdJg/company-logo_200_200/company-logo_200_200/0/1630469288270/technion_logo?e=1773273600&v=beta&t=bhMoWlQ0RLm-o_Grcqw7cw8bVc0q3OqtwbtMkIGy-a0"
                   alt="NGS-Group"
-                  className="imgFormazion mt-4"
+                  className="imgFormazion1 mt-1"
                 />
               </Col>
-              <Col xs={11} className="mt-3">
+              <Col xs={11}>
                 <div className="d-flex flex-column">
                   <h3>Technion - Institute of Technology</h3>
                   <p className="mb-1">Master of Bussiness Administrator</p>
-                  <p>
-                    Approximately 36 years before Israel declared independence, a ceremony took place on the barren slopes of Mount Carmel near the Port of
-                    Haifa, which was then occupied by the Ottoman Empire. Unknown to the Haifa community witnessing the event, this would be a milestone in
-                    history.
-                  </p>
                   <span className="text-secondary">1995-1997</span>
+                  <p className="mb-4">Attività e associazioni: HTML, CSS, JavaScript, React, TypeScript, Java</p>
                 </div>
               </Col>
             </Row>

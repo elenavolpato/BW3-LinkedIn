@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchExperiences } from "../redux/actions/experienceActions"
-import { Card, Col, Row } from "react-bootstrap"
-import { monthAndYear, capitalizeFirstLetter } from "./Utils"
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchExperiences } from "../redux/actions/experienceActions";
+import { Card, Col, Row } from "react-bootstrap";
+import { monthAndYear, capitalizeFirstLetter } from "./Utils";
 
 const ExperienceList = (/* { userId } */) => {
-  const [userId, setUserId] = useState("653f5b02b397340014d5e7fa")
+  const Token = localStorage.getItem("token");
+  const [userId, setUserId] = useState(Token);
   const getUsers = () => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/", {
       headers: {
@@ -14,35 +15,35 @@ const ExperienceList = (/* { userId } */) => {
     })
       .then((res) => {
         if (res.ok) {
-          return res.json()
+          return res.json();
         } else {
-          throw new Error("Error fetching profiles")
+          throw new Error("Error fetching profiles");
         }
       })
       .then((data) => {
-        setUserId(data[26]._id)
+        setUserId(data[26]._id);
       })
       .catch((err) => {
-        console.error(err)
-      })
-  }
+        console.error(err);
+      });
+  };
 
-  const dispatch = useDispatch()
-  const { list, loading, error } = useSelector((state) => state.experiences)
+  const dispatch = useDispatch();
+  const { list, loading, error } = useSelector((state) => state.experiences);
 
   useEffect(() => {
-    getUsers()
-  }, [])
+    getUsers();
+  }, []);
 
   useEffect(() => {
     if (userId) {
-      dispatch(fetchExperiences(userId))
+      dispatch(fetchExperiences(userId));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId])
+  }, [userId]);
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <Card className="mb-2 p-3 position-relative">
@@ -53,39 +54,24 @@ const ExperienceList = (/* { userId } */) => {
       </div>
 
       {list.map((exp, index) => (
-        <div
-          className={`d-flex gap-3 my-3 ${index !== list.length - 1 ? "border-bottom" : ""}`}
-        >
-          <img
-            src={exp.image}
-            alt={`${exp.company} image`}
-            style={{ width: "50px" }}
-            className="align-self-start rounded-1"
-          />
-          <div
-            key={exp._id}
-            className=""
-          >
-            <p className="fw-bold no-margin">
-              {capitalizeFirstLetter(exp.role)}
-            </p>
+        <div className={`d-flex gap-3 my-3 ${index !== list.length - 1 ? "border-bottom" : ""}`}>
+          <img src={exp.image} alt={`${exp.company} image`} style={{ width: "50px" }} className="align-self-start rounded-1" />
+          <div key={exp._id} className="">
+            <p className="fw-bold no-margin">{capitalizeFirstLetter(exp.role)}</p>
             <p className="no-margin">{exp.company} · Tempo pieno </p>
             <p className="text-black-50 no-margin">
               {monthAndYear(exp.startDate)} - {monthAndYear(exp.updatedAt)}
             </p>
-            {exp.area && (
-              <p className="text-black-50 no-margin">{exp.area}, Italy</p>
-            )}
+            {exp.area && <p className="text-black-50 no-margin">{exp.area}, Italy</p>}
             <p className="">{exp.description}</p>
             <p className="fw-bold">
-              <i class="bi bi-gem"></i> &nbsp; Lavoratore incredibile,
-              Irresposabilità, Disorganizzazione{" "}
+              <i class="bi bi-gem"></i> &nbsp; Lavoratore incredibile, Irresposabilità, Disorganizzazione{" "}
             </p>
           </div>
         </div>
       ))}
     </Card>
-  )
-}
+  );
+};
 
-export default ExperienceList
+export default ExperienceList;
