@@ -10,8 +10,8 @@ const FormazioneProfile = function () {
           <div className="p-3 d-flex justify-content-between">
             <h3 className="mb-0">Formazione</h3>
             <div>
-              <i className="bi bi-plus-lg fs-4 me-3"></i>
-              <i className="bi bi-pencil fs-4"></i>
+              <i className="bi bi-plus-lg fs-4 me-3 hoverIcon"></i>
+              <i className="bi bi-pencil fs-4 hoverIcon"></i>
             </div>
           </div>
           <Card.Body className="p-0">
