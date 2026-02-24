@@ -5,6 +5,7 @@ import "../assets/css/feed.css"
 import PostCard from "../components/PostCard"
 import RightSideBar from "../components/RightSideBar"
 import LeftSidebar from "../components/LeftSideBar"
+import PostForm from "../components/PostForm"
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
@@ -15,6 +16,9 @@ const Feed = () => {
   const apiKEy = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
 
   const getPosts = () => {
+    setLoading(true)
+    setError(null)
+
     fetch(fetchURL, {
       headers: {
         authorization: "Bearer " + apiKEy,
@@ -44,6 +48,7 @@ const Feed = () => {
   }
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     getPosts()
   }, [])
 
@@ -53,12 +58,15 @@ const Feed = () => {
       <Row className="justify-content-center">
 
         {/* colonna sx */}
-        <Col md={3}>
+        <Col md={3} className="sticky-side" >
           <LeftSidebar />
         </Col>
 
         {/* colonna centrale */}
         <Col md={6}>
+          <PostForm
+            onPostCreated={getPosts}
+          />
           {loading ? (
             <Spinner className="d-block mx-auto mt-5" animation="border" />
           ) : error ? (
@@ -86,7 +94,7 @@ const Feed = () => {
         </Col>
 
         {/* colonna dx */}
-        <Col md={3}>
+        <Col md={3} className="sticky-side">
           <RightSideBar />
         </Col>
       </Row>
