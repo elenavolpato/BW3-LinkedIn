@@ -11,7 +11,7 @@ const LeftSidebar = () => {
 
   return (
     // CARD 1
-    <div style={{ width: "225px" }}>
+    <div>
       <Card className="mb-2 shadow-sm overflow-hidden">
         {/* IMG COPERTINA */}
         <Card.Img
