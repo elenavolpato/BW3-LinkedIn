@@ -1,9 +1,9 @@
-import { Container, Row, Col, Button, Card, CardImg } from "react-bootstrap"
+import { Row, Col, Button, Card, CardImg } from "react-bootstrap"
 import "../assets/css/PersonalInfo.css"
 
 const PersonalInfo = () => {
   return (
-    <Card>
+    <Card className="mb-3">
       <Col className="position-relative">
         <CardImg
           src="https://placedog.net/1200/300"

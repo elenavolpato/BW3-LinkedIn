@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 import { Container, Row, Col } from "react-bootstrap"
+=======
+import { Container } from "react-bootstrap"
+>>>>>>> elena-experience
 import ExperienceList from "../components/ExperienceList"
 import PersonalInfo from "../components/PersonalInfo"
 import RightSidebarProfile from "../components/RightSidebarProfile"
 
 const Profile = () => {
   return (
+<<<<<<< HEAD
     <Container className="pt-3">
       <Row>
         <Col
@@ -23,6 +28,11 @@ const Profile = () => {
           <RightSidebarProfile />
         </Col>
       </Row>
+=======
+    <Container>
+      <PersonalInfo />
+      <ExperienceList />
+>>>>>>> elena-experience
     </Container>
   )
 }
