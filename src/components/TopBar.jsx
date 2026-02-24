@@ -3,11 +3,25 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import "../assets/css/TopBar.css";
+
 import { Button } from "react-bootstrap";
+import { logoutUser } from "../redux/actions/loginAuth";
 
 const TopBar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = function () {
+    dispatch(logoutUser());
+    navigate("/login");
+  };
+
+  const { isAuthenticated } = useSelector((state) => state.auth || {});
+
   return (
     <Navbar expand="lg" className="linkedin-navbar bg-white shadow-sm">
       <Container fluid className="p-0">
@@ -26,10 +40,10 @@ const TopBar = () => {
 
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto align-items-center" navbarScroll>
-            <Nav.Link href="#home" className="nav-item-custom">
+            <Link to="/" className="nav.link text-decoration-none nav-item-custom">
               <i className="bi bi-house-door-fill nav-icon"></i>
               <span className="nav-text">Home</span>
-            </Nav.Link>
+            </Link>
 
             <Nav.Link href="#rete" className="nav-item-custom">
               <i className="bi bi-people-fill nav-icon"></i>
@@ -65,8 +79,8 @@ const TopBar = () => {
               align="end"
               className="nav-item-custom no-caret"
             >
-              <NavDropdown.Item href="#profile">
-                <div className="d-flex gap-1">
+              <NavDropdown.Item>
+                <div className="d-flex gap-1" onClick={() => navigate("/profile")}>
                   <img src="https://placedog.net/300/200" className="rounded-4" width="40" height="40" alt="Il tuo profilo" />
                   <div>
                     <div className="d-flex align-items-center gap-1">
@@ -76,7 +90,9 @@ const TopBar = () => {
                     <p>fasdfdasfasdfsdsfaadsfasfsdaffafdsfdsaf</p>
                   </div>
                 </div>
-                <Button className=" d-block w-100 text-primary bg-light rounded-5 py-0 buttonViewProfile fw-bold">Visualizza profilo</Button>
+                <Button className=" d-block w-100 text-primary bg-light rounded-5 py-0 buttonViewProfile fw-bold" onClick={() => navigate("/profile")}>
+                  Visualizza profilo
+                </Button>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#settings">
@@ -102,9 +118,11 @@ const TopBar = () => {
                 <span className="text-secondary">Account per la pubblicazione di offerte di lavoro</span>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#logout" className="text-secondary">
-                Esci
-              </NavDropdown.Item>
+              {isAuthenticated && (
+                <NavDropdown.Item className="text-secondary" onClick={handleLogout}>
+                  Esci
+                </NavDropdown.Item>
+              )}
             </NavDropdown>
 
             <NavDropdown
