@@ -21,9 +21,9 @@
 }
 
 .linkedin-sidebar {
-  width: 320px;
+  max-width: auto;
   border-radius: 10px;
-  background-color: #f3f2ef;
+  background-color: white;
 }
 
 .sidebar-title {

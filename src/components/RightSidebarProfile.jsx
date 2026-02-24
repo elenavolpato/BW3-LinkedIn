@@ -59,7 +59,7 @@ const RightSideBarProfile = () => {
           <span>www.linkedin.com/in/magnificorettore-99999aura</span>
         </div>
       </Container>
-      <Card className="linkedin-sidebar">
+      <Card className="linkedin-sidebar mt-3">
         <Card.Body>
           <h6 className="sidebar-title">Persone che potresti conoscere</h6>
           <p className="sidebar-subtitle">Dalla tua scuola o università</p>
