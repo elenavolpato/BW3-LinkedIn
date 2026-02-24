@@ -12,8 +12,7 @@ const Feed = () => {
   const [error, setError] = useState(null);
 
   const fetchURL = "https://striveschool-api.herokuapp.com/api/posts/"
-  const apiKEy =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
+  const apiKEy = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
 
   const getPosts = () => {
     fetch(fetchURL, {
@@ -29,9 +28,13 @@ const Feed = () => {
         }
       })
       .then((data) => {
-        console.log(data)
+
+        const sortedPosts = [...data].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        const limit = sortedPosts.slice(0, 20);
+
+        console.log(limit)
         setLoading(false)
-        setPosts(data)
+        setPosts(limit)
       })
       .catch((err) => {
         console.log(err)
