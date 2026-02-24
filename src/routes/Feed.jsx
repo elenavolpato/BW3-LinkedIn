@@ -7,9 +7,9 @@ import RightSideBar from "../components/RightSideBar"
 import LeftSidebar from "../components/LeftSideBar"
 
 const Feed = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   const fetchURL = "https://striveschool-api.herokuapp.com/api/posts/"
   const apiKEy =
@@ -29,7 +29,7 @@ const Feed = () => {
         }
       })
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         setLoading(false)
         setPosts(data)
       })
@@ -48,7 +48,6 @@ const Feed = () => {
     // post
     <Container className="feed-container">
       <Row className="justify-content-center">
-
         {/* colonna sx */}
         <Col md={3}>
           <LeftSidebar />
@@ -57,9 +56,15 @@ const Feed = () => {
         {/* colonna centrale */}
         <Col md={6}>
           {loading ? (
-            <Spinner className="d-block mx-auto mt-5" animation="border" />
+            <Spinner
+              className="d-block mx-auto mt-5"
+              animation="border"
+            />
           ) : error ? (
-            <Alert className="text-center" variant="danger">
+            <Alert
+              className="text-center"
+              variant="danger"
+            >
               {error}
             </Alert>
           ) : (
