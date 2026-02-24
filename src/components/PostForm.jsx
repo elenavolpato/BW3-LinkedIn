@@ -2,7 +2,7 @@ import '../assets/css/PostForm.css'
 import { Alert, Spinner } from 'react-bootstrap';
 import { useState } from "react";
 
-function PostForm() {
+function PostForm({ onPostCreated }) {
 
     const [text, setText] = useState("");
     const [loading, setLoading] = useState(false);
@@ -11,7 +11,13 @@ function PostForm() {
     const fetchURL = 'https://striveschool-api.herokuapp.com/api/posts/'
     const apiKEy = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
 
-    function handleSubmit() {
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (!text.trim()) return;
+
+        setLoading(true);
+        setError(null);
+
         fetch(fetchURL, {
             method: "POST",
             headers: {
@@ -31,6 +37,8 @@ function PostForm() {
                 console.log(data)
                 setText("")
                 setLoading(false)
+
+                onPostCreated?.(data) // Funzione per aggiornare la lista dei post nel componente padre
             })
             .catch((err) => {
                 console.log(err)

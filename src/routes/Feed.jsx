@@ -16,6 +16,9 @@ const Feed = () => {
   const apiKEy = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
 
   const getPosts = () => {
+    setLoading(true)
+    setError(null)
+
     fetch(fetchURL, {
       headers: {
         authorization: "Bearer " + apiKEy,
@@ -45,6 +48,7 @@ const Feed = () => {
   }
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     getPosts()
   }, [])
 
@@ -60,7 +64,9 @@ const Feed = () => {
 
         {/* colonna centrale */}
         <Col md={6}>
-          <PostForm />
+          <PostForm
+            onPostCreated={getPosts}
+          />
           {loading ? (
             <Spinner className="d-block mx-auto mt-5" animation="border" />
           ) : error ? (
