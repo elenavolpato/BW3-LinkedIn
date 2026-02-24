@@ -1,5 +1,6 @@
 import { Row, Col, Button, Card, CardImg } from "react-bootstrap";
 import "../assets/css/PersonalInfo.css";
+import FooterProfile from "./FooterProfile";
 
 const PersonalInfo = () => {
   return (
