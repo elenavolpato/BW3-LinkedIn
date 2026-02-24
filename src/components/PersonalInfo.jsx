@@ -1,10 +1,11 @@
 import { Container, Row, Col, Button, Card, CardImg } from "react-bootstrap";
 import "../assets/css/PersonalInfo.css";
+import FormazioneProfile from "./FormazioneProfile";
 
 const PersonalInfo = () => {
   return (
     <>
-      <Container>
+      <Container className="mb-5">
         <Card>
           <Col className="position-relative">
             <CardImg
@@ -80,6 +81,7 @@ const PersonalInfo = () => {
           </Col>
         </Card>
       </Container>
+      <FormazioneProfile />
     </>
   );
 };
