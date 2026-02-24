@@ -5,6 +5,7 @@ import "../assets/css/feed.css"
 import PostCard from "../components/PostCard"
 import RightSideBar from "../components/RightSideBar"
 import LeftSidebar from "../components/LeftSideBar"
+import PostForm from "../components/PostForm"
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
@@ -59,6 +60,7 @@ const Feed = () => {
 
         {/* colonna centrale */}
         <Col md={6}>
+          <PostForm />
           {loading ? (
             <Spinner className="d-block mx-auto mt-5" animation="border" />
           ) : error ? (
