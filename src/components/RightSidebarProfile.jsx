@@ -1,5 +1,5 @@
-import { Container } from "react-bootstrap"
-import "../assets/css/RightSidebarProfile.css"
+import { Container } from "react-bootstrap";
+import "../assets/css/RightSidebarProfile.css";
 
 const RightSideBarProfile = () => {
   return (
