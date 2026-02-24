@@ -10,7 +10,7 @@
   color: #62615f;
 }
 
-.dropdown-toggle {
+.dropdown-class {
   background-color: transparent;
   border: none;
   color: #62615f;
@@ -22,4 +22,18 @@ a {
   text-decoration: none;
   color: #62615f;
   font-size: small;
+}
+
+.linguage-dropdown {
+  background-color: white;
+  border: solid 1px #ccc;
+  color: #62615f;
+  padding: 5px 15px;
+  font-size: small;
+  border-radius: 10px;
+}
+
+.linguage-dropdown:hover {
+  border: solid 2px black;
+  background-color: white;
 }

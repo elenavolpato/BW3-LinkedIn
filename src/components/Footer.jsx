@@ -9,7 +9,7 @@ const Footer = () => {
         <a href="#">Accesibilità</a>
         <a href="#">Centro Assistenza</a>
         <Dropdown>
-          <Dropdown.Toggle variant="" className="dropdown-toggle">
+          <Dropdown.Toggle variant="" className="dropdown-footer">
             Privacy e condizioni
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -23,7 +23,7 @@ const Footer = () => {
         <a href="#">Opzioni per gli annunci pubblicitari</a>
         <a href="#">Pubblicità</a>
         <Dropdown>
-          <Dropdown.Toggle variant="" className="dropdown-toggle">
+          <Dropdown.Toggle variant="" className="dropdown-footer">
             Servizi alle aziende
           </Dropdown.Toggle>
           <Dropdown.Menu>
