@@ -49,14 +49,14 @@ const ExperienceList = (/* { userId } */) => {
     <Card className="mb-2 p-3 position-relative">
       <h4 className="fw-bold p-1">Esperienza</h4>
       <div className="position-absolute fw-bold top-0 end-0 pt-3 pe-4">
-        <i class="bi bi-plus-lg fs-4 me-3"></i>
+        <i className="bi bi-plus-lg fs-4 me-3"></i>
         <i className="bi bi-pencil fs-5"></i>
       </div>
 
       {list.map((exp, index) => (
-        <div className={`d-flex gap-3 my-3 ${index !== list.length - 1 ? "border-bottom" : ""}`}>
+        <div key={exp._id} className={`d-flex gap-3 my-3 ${index !== list.length - 1 ? "border-bottom" : ""}`}>
           <img src={exp.image} alt={`${exp.company} image`} style={{ width: "50px" }} className="align-self-start rounded-1" />
-          <div key={exp._id} className="">
+          <div>
             <p className="fw-bold no-margin">{capitalizeFirstLetter(exp.role)}</p>
             <p className="no-margin">{exp.company} · Tempo pieno </p>
             <p className="text-black-50 no-margin">
@@ -65,7 +65,7 @@ const ExperienceList = (/* { userId } */) => {
             {exp.area && <p className="text-black-50 no-margin">{exp.area}, Italy</p>}
             <p className="">{exp.description}</p>
             <p className="fw-bold">
-              <i class="bi bi-gem"></i> &nbsp; Lavoratore incredibile, Irresposabilità, Disorganizzazione{" "}
+              <i className="bi bi-gem"></i> &nbsp; Lavoratore incredibile, Irresposabilità, Disorganizzazione{" "}
             </p>
           </div>
         </div>
