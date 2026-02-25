@@ -54,7 +54,7 @@ const PersonalInfo = () => {
       })
 
       .catch((err) => {
-        console.log("Erore upload", err.message)
+        console.log("ErRore upload", err.message)
         alert("Caricamento foto fallito:" + err.message)
       })
   }

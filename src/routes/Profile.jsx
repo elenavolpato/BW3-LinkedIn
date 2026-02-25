@@ -4,6 +4,7 @@ import PersonalInfo from "../components/PersonalInfo"
 import RightSidebarProfile from "../components/RightSidebarProfile"
 import FooterProfile from "../components/FooterProfile"
 import FormazioneProfile from "../components/FormazioneProfile"
+import Activities from "../components/Activities"
 
 const Profile = () => {
   return (
@@ -15,8 +16,9 @@ const Profile = () => {
           sx={12}
         >
           <PersonalInfo />
-          <FormazioneProfile />
           <ExperienceList />
+          <FormazioneProfile />
+          <Activities />
           <FooterProfile />
         </Col>
         <Col

@@ -46,7 +46,7 @@ const ExperienceList = (/* { userId } */) => {
   if (error) return <p>Error: {error}</p>
 
   return (
-    <Card className="p-3 position-relative">
+    <Card className="p-3 position-relative mb-3">
       <h4 className="fw-bold p-1">Esperienza</h4>
       <div className="position-absolute fw-bold top-0 end-0 pt-3 pe-4">
         <i class="bi bi-plus-lg fs-4 me-3"></i>
