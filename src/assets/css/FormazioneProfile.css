@@ -1,0 +1,18 @@
+.imgFormazion {
+  height: 40%;
+}
+
+.imgFormazion1 {
+  height: 30%;
+}
+
+.borderFormazione {
+  border-bottom: 1px solid grey;
+}
+
+.hoverIcon:hover {
+  cursor: pointer;
+  background-color: rgb(190, 187, 187);
+  border-radius: 20px;
+  font-size: 1.2rem !important;
+}
