@@ -5,8 +5,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { monthAndYear, capitalizeFirstLetter } from "./Utils";
 
 const ExperienceList = (/* { userId } */) => {
-  const Tokem = localStorage.getItem("token");
-  const [userId, setUserId] = useState("Token");
+  const [userId, setUserId] = useState("653f5b02b397340014d5e7fa");
   const getUsers = () => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/", {
       headers: {
