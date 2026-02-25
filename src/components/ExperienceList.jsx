@@ -5,11 +5,12 @@ import { Card, Col, Row } from "react-bootstrap";
 import { monthAndYear, capitalizeFirstLetter } from "./Utils";
 
 const ExperienceList = (/* { userId } */) => {
+  const token = localStorage.getItem("token");
   const [userId, setUserId] = useState("653f5b02b397340014d5e7fa");
   const getUsers = () => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/", {
       headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_PROFILE_TOKEN}`,
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => {

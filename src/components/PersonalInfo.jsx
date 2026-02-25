@@ -96,7 +96,7 @@ const PersonalInfo = () => {
                 </div>
                 <p className="no-margin">{profileData?.title}</p>
                 <p className="text-black-50 ">
-                  Cidade, Mundo, Universo ·&nbsp;
+                  {profileData?.area}·&nbsp;
                   <span className="text-primary fw-bold">Contact info</span>
                 </p>
                 <p className="text-primary fw-bold">100.000.000 followers · 500+ connections</p>
