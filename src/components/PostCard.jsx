@@ -59,7 +59,7 @@ function PostCard(props) {
   }, [props.description, expanded, lines])
 
   return (
-    <div className="post-card">
+    <div className="post-card mb-3">
       {/* caption */}
       <div className="post-caption">
         <img

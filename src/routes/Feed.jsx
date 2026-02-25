@@ -55,7 +55,7 @@ const Feed = () => {
 
   return (
     // post
-    <Container className="feed-container">
+    <Container className="pt-3">
       <Row className="justify-content-center">
         {/* colonna sx */}
         <Col
@@ -66,11 +66,14 @@ const Feed = () => {
         </Col>
 
         {/* colonna centrale */}
-        <Col md={6}>
+        <Col
+          md={6}
+          className="no-margin"
+        >
           <PostForm onPostCreated={getPosts} />
           {loading ? (
             <Spinner
-              className="d-block mx-auto mt-5"
+              className="d-block mx-auto mt-3"
               animation="border"
             />
           ) : error ? (
@@ -83,6 +86,7 @@ const Feed = () => {
           ) : (
             posts.map((post) => (
               <PostCard
+                className="mb-3"
                 key={post._id}
                 id={post._id}
                 name={

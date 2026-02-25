@@ -49,7 +49,7 @@ function PostForm({ onPostCreated }) {
 
   return (
     <div>
-      <div className="post-form-container">
+      <div className="post-form-container mb-3">
         <div className="form-post">
           <img
             className="form-img"
@@ -65,12 +65,17 @@ function PostForm({ onPostCreated }) {
           />
         </div>
         <div className="form-actions">
-          <button className="post-button">Video</button>
-          <button className="post-button">Foto</button>
+          <button className="post-button fw-bolder text-secondary">
+            <i class="bi bi-play-btn-fill green-color me-1"></i>Video
+          </button>
+          <button className="post-button fw-bolder text-secondary">
+            <i class="bi bi-image-fill blue-color me-1"></i>Foto
+          </button>
           <button
-            className="post-button"
+            className="post-button fw-bolder text-secondary"
             onClick={handleSubmit}
           >
+            <i class="bi bi-chat-right-text-fill orange-color me-1"></i>
             Posta
           </button>
         </div>
