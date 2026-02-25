@@ -9,48 +9,46 @@ const Jobs = () => {
   const [error, setError] = useState(null);
 
   const location = useLocation();
+
   const searchQuery = new URLSearchParams(location.search).get("search") || "";
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const query = params.get("search") || "";
-    fetchJobs(query);
-  }, [location.search]);
-
-  const fetchJobs = async (query = "") => {
     setLoading(true);
     setError(null);
 
-    try {
-      let url = "https://strive-benchmark.herokuapp.com/api/jobs";
-      if (query.trim()) {
-        url += `?search=${encodeURIComponent(query.trim())}`;
-      }
-      url += `${query.trim() ? "&" : "?"}limit=15`;
+    const query = searchQuery.trim();
 
-      const res = await fetch(url);
-      if (!res.ok) {
-        throw new Error(`Errore ${res.status}: ${res.statusText}`);
-      }
-
-      const responseData = await res.json();
-
-      const jobsArray = responseData.data || responseData || [];
-      setJobs(jobsArray);
-    } catch (err) {
-      console.error("Fetch error:", err);
-      setError(err.message || "Impossibile caricare gli annunci di lavoro");
-    } finally {
-      setLoading(false);
+    let url = "https://strive-benchmark.herokuapp.com/api/jobs";
+    if (query) {
+      url += `?search=${encodeURIComponent(query)}&limit=15`;
+    } else {
+      url += "?limit=15";
     }
-  };
+
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Errore ${response.status} - ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const jobsArray = data.data || data || [];
+        setJobs(jobsArray);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Errore fetch:", err);
+        setError(err.message || "Impossibile caricare gli annunci");
+        setLoading(false);
+      });
+  }, [location.search, searchQuery]);
 
   return (
     <>
       <JobsNavbar />
 
       <Container fluid className="pt-5 mt-4">
-        {" "}
         <Row className="justify-content-center">
           <Col lg={10} xl={9}>
             {loading && (
@@ -99,17 +97,19 @@ const Jobs = () => {
                           src={
                             job.company_logo_url ||
                             job.company_logo ||
-                            `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                              job.company_name?.trim() || "Company",
-                            )}&background=0D8ABC&color=fff&size=80&rounded=true&bold=true`
+                            `https://ui-avatars.com/api/?name=${encodeURIComponent(job.company_name?.trim() || "Company")}&background=0D8ABC&color=fff&size=80`
                           }
                           alt={`${job.company_name || "Company"} logo`}
                           width={80}
                           height={80}
-                          className="rounded"
-                          style={{ objectFit: "contain", background: "#f3f2ef" }}
+                          className="rounded object-contain bg-light border border-secondary-subtle"
                           onError={(e) => {
-                            e.target.src = "https://via.placeholder.com/80?text=Logo";
+                            e.target.src =
+                              "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E" +
+                              "%3Crect width='80' height='80' fill='%23f0f2f5'/%3E" +
+                              "%3Ctext x='50%' y='54%' font-family='sans-serif' font-size='24' text-anchor='middle' fill='%23667eea' font-weight='bold'%3E" +
+                              (job.company_name?.charAt(0)?.toUpperCase() || "?") +
+                              "%3C/text%3E%3C/svg%3E";
                             e.target.onerror = null;
                           }}
                         />
