@@ -1,13 +1,24 @@
+import { useEffect } from "react"
 import { Card, ListGroup } from "react-bootstrap"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchExperiences } from "../redux/actions/experienceActions"
 
 const LeftSidebar = () => {
+  const profileData = useSelector((state) => state.profile?.profile)
+  const recentExperience = useSelector((state) => state.experiences.list[1])
+  const dispatch = useDispatch()
   const user = {
-    nome: "Diego Armando",
-    ruolo: "Football player",
-    luogo: "Paestum",
-    fotoProfilo: "https://placebear.com/200/300",
+    nome: `${profileData.name}  ${profileData.surname}`,
+    ruolo: profileData.title,
+    luogo: profileData.area,
+    fotoProfilo: profileData?.image,
     fotoCopertina: "https://placecats.com/300/200",
   }
+
+  useEffect(() => {
+    dispatch(fetchExperiences())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     // CARD 1
@@ -30,15 +41,25 @@ const LeftSidebar = () => {
               src={user.fotoProfilo}
               alt="Profilo"
               className="rounded-circle border border-white border-3"
-              style={{ width: "72px", height: "72px", objectFit: "cover" }}
+              style={{ width: "85px", height: "85px", objectFit: "cover" }}
             />
           </div>
 
-          <div className="mt-5 d-flex flex-column align-items-start">
+          <div className="mt-5 d-flex flex-column align-items-start pt-2">
             <h6 className="fw-bold mb-0">{user.nome}</h6>
             <p className="small my-1">{user.ruolo}</p>
             <p className="text-muted small">{user.luogo}</p>
           </div>
+          {recentExperience && (
+            <div className="d-flex align-items-start gap-2 no-margin">
+              <img
+                src={recentExperience.image}
+                alt={`${recentExperience.company} image`}
+                className="company-image rounded-1"
+              />
+              <p className="fw-bolder">{recentExperience.role} </p>
+            </div>
+          )}
         </Card.Body>
       </Card>
 
