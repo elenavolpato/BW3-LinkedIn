@@ -66,6 +66,7 @@ const Feed = () => {
           <PostForm
             onPostCreated={getPosts}
           />
+          <hr />
           {loading ? (
             <Spinner
               className="d-block mx-auto mt-5"
