@@ -53,15 +53,12 @@ const FormazioneProfile = function () {
                 <p className="fw-bold no-margin">{educ.institution}</p>
                 <p className="no-margin">{educ.degree} </p>
                 <p className="text-black-50 no-margin">{educ.period}</p>
-                {educ.area && (
-                  <p className="text-black-50 no-margin">{educ.area}, Italy</p>
-                )}
 
-                <p className="fw-bold">
+                {/*  <p className="fw-bold">
                   {educ.activities.map((act) => (
-                    <span>{act}</span>
+                    <span>{act} &nbsp;</span>
                   ))}
-                </p>
+                </p> */}
               </div>
             </div>
           ))}

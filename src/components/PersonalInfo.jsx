@@ -1,6 +1,5 @@
-import { Container, Row, Col, Button, Card, CardImg } from "react-bootstrap"
+import { Row, Col, Button, Card, CardImg } from "react-bootstrap"
 import "../assets/css/PersonalInfo.css"
-import FormazioneProfile from "./FormazioneProfile"
 import { useRef } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { POST } from "../redux/actions/postUiActions"
@@ -60,6 +59,12 @@ const PersonalInfo = () => {
       })
   }
 
+  const randomPronouns = () => {
+    const pronouns = ["She/her", "He/him", "They/them"]
+    // eslint-disable-next-line
+    return pronouns[Math.floor(Math.random() * pronouns.length)]
+  }
+
   return (
     <>
       <Card className="mb-3">
@@ -88,36 +93,38 @@ const PersonalInfo = () => {
           </div>
 
           <Row className="p-3 g-2">
-            <Col md={6}>
+            <Col md={8}>
               <div className="d-flex align-items-center gap-2 mb-0 pb-0">
                 <h1 className="mb-0 pb-0">
                   {profileData.name} {profileData.surname}
                 </h1>
                 <i className="bi bi-shield-check"></i>
-                <h6 className="text-black-50 pt-2"> She/Her</h6>
+                <h6 className="text-black-50 pt-2"> {randomPronouns()}</h6>
               </div>
               <p className="no-margin">{profileData?.title}</p>
               <p className="text-black-50 ">
                 {profileData?.area}·&nbsp;
-                <span className="text-primary fw-bold">Contact info</span>
+                <span className="text-primary fw-bold">
+                  Informazioni di contatto
+                </span>
               </p>
               <p className="text-primary fw-bold">
-                100.000.000 followers · 500+ connections
+                100.000.000 followers · 500+ connessioni
               </p>
 
               <div className="position-relative work-status-box rounded p-3">
                 <i className="bi bi-pencil position-absolute fw-bold top-0 end-0 pt-3 pe-4"></i>
-                <p className="fw-bold no-margin">Open to work</p>
-                <p>Javascript developer roles</p>
+                <p className="fw-bold no-margin">Disponibile a lavorare</p>
+                <p>Ruoli di sviluppatore Javascript</p>
                 <Button
                   className="border-0 m-0 p-0"
                   variant="outline-primary"
                 >
-                  Show details
+                  Mostra dettagli
                 </Button>
               </div>
             </Col>
-            <Col md={6}>
+            <Col md={4}>
               <div className="d-flex gap-3 ">
                 <div className="icon-company">
                   <svg
