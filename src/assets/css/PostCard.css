@@ -71,12 +71,13 @@
   color: black;
   cursor: pointer;
   font-family: inherit;
-  padding: 10px 10px;
-  border-radius: 8px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px 0;
 }
 
 .post-button:hover {
   text-decoration: underline;
-  background: lightgray;
+  background: #F4F2EE;
   color: black;
 }
