@@ -8,6 +8,7 @@ import { store } from "./redux/store";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LoginAuth from "./components/LoginAuth";
 import Layout from "./components/Layout";
+import Jobs from "./components/Jobs";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route element={<ProtectedRoute />}>
                 <Route path="/" element={<Feed />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/jobs" element={<Jobs />} />
               </Route>
             </Route>
           </Routes>

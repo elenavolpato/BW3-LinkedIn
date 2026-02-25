@@ -16,7 +16,7 @@ const Footer = () => {
         </Col>
         <Col>
           <div className="d-flex gap-2">
-            <i class="bi bi-question-circle-fill"></i>
+            <i className="bi bi-question-circle-fill"></i>
             <div className="align-items-center gap-2">
               <h2 style={{ fontSize: "1rem", color: "#62615f", fontWeight: "bold" }}>Domande?</h2>
               <p style={{ fontSize: "0.8rem", color: "#62615f" }}>Visita il Nostro Centro assistenza</p>
@@ -66,7 +66,7 @@ const Footer = () => {
         </Col>
         <Col>
           <div className="d-flex gap-2">
-            <i class="bi bi-shield-shaded"></i>
+            <i className="bi bi-shield-shaded"></i>
             <div className="align-items-center gap-2">
               <h2 style={{ fontSize: "1rem", color: "#62615f", fontWeight: "bold" }}>Trasparenza sui contenuti consigliati</h2>
               <p style={{ fontSize: "0.8rem", color: "#62615f" }}>Scopri sui contenuti cosigliati.</p>

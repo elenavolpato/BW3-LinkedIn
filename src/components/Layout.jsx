@@ -4,7 +4,7 @@ import TopBar from "./TopBar";
 
 export default function Layout() {
   const location = useLocation();
-  const noTopBar = ["/login"];
+  const noTopBar = ["/login", "/jobs"];
 
   const show = !noTopBar.includes(location.pathname);
 
