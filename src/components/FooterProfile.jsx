@@ -95,7 +95,7 @@ const Footer = () => {
             {/* colonna con icone  */}
             <Col md={6}>
               <div className="d-flex gap-2">
-                <i class="bi bi-question-circle-fill"></i>
+                <i className="bi bi-question-circle-fill"></i>
                 <div className="align-items-center gap-2">
                   <h2
                     style={{
@@ -110,7 +110,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="d-flex gap-2">
-                <i class="bi bi-gear-fill"></i>
+                <i className="bi bi-gear-fill"></i>
                 <div className="align-items-center gap-2">
                   <h2
                     style={{
@@ -125,7 +125,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="d-flex gap-2">
-                <i class="bi bi-shield-shaded"></i>
+                <i className="bi bi-shield-shaded"></i>
                 <div className="align-items-center gap-2">
                   <h2
                     style={{

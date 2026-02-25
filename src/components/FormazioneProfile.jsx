@@ -38,9 +38,9 @@ const FormazioneProfile = function () {
           </div>
           <Card.Body className="p-0">
             {education.map((educ, index) => (
-              <div className={`d-flex gap-3 p-4 ${index !== education.length - 1 ? "border-bottom" : ""}`}>
+              <div key={index} className={`d-flex gap-3 p-4 ${index !== education.length - 1 ? "border-bottom" : ""}`}>
                 <img src={educ.img} alt={educ.alt} style={{ width: "50px" }} className="align-self-start rounded-1" />
-                <div key={index} className="">
+                <div className="">
                   <p className="fw-bold no-margin">{educ.institution}</p>
                   <p className="no-margin">{educ.degree} </p>
                   <p className="text-black-50 no-margin">{educ.period}</p>
