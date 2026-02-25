@@ -6,20 +6,24 @@ import Profile from "./routes/Profile";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import ProtectedRoute from "./components/ProtectedRoute";
-import TopBar from "./components/TopBar";
 import LoginAuth from "./components/LoginAuth";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <>
       <Provider store={store}>
         <BrowserRouter>
-          <TopBar />
           <Routes>
+            {/* Pagine senza TopBar */}
             <Route path="/login" element={<LoginAuth />} />
-            <Route element={<ProtectedRoute />}>
-              <Route path="/" element={<Feed />} />
-              <Route path="/profile" element={<Profile />} />
+
+            {/* Tutto il resto con TopBar */}
+            <Route element={<Layout />}>
+              <Route element={<ProtectedRoute />}>
+                <Route path="/" element={<Feed />} />
+                <Route path="/profile" element={<Profile />} />
+              </Route>
             </Route>
           </Routes>
         </BrowserRouter>

@@ -1,7 +1,6 @@
 import { Container } from "react-bootstrap";
 import "../assets/css/RightSidebarProfile.css";
 import { Card, Button, Image } from "react-bootstrap";
-import { PersonPlusFill, ShieldFillCheck } from "react-bootstrap-icons";
 
 const users = [
   {
@@ -72,12 +71,12 @@ const RightSideBarProfile = () => {
                 <div className="user-text">
                   <div className="user-name">
                     {user.name}
-                    {user.verified && <ShieldFillCheck className="verified-icon" />}
+                    {user.verified && <i className="bi bi-shield-fill-check verified-icon"></i>}
                   </div>
                   <div className="user-role">{user.role}</div>
 
                   <Button variant="outline-secondary" size="sm" className="connect-btn">
-                    <PersonPlusFill className="me-1" />
+                    <i className="bi bi-person-plus-fill me-1"></i>
                     Collegati
                   </Button>
                 </div>
