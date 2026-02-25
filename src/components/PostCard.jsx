@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap"
 import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { togglePostExpanded } from "../redux/actions/postUiActions"
+import { Card } from "react-bootstrap"
 
 function PostCard(props) {
   const dispatch = useDispatch()
@@ -59,7 +60,7 @@ function PostCard(props) {
   }, [props.description, expanded, lines])
 
   return (
-    <div className="post-card mb-3">
+    <Card className="p-3 mb-3">
       {/* caption */}
       <div className="post-caption">
         <img
@@ -119,13 +120,38 @@ function PostCard(props) {
       </div>
 
       {/* pulsanti */}
-      <div className="post-buttons">
-        <button className="post-button">Consiglia</button>
-        <button className="post-button">Commenta</button>
-        <button className="post-button">Diffondi il post</button>
-        <button className="post-button">Invia</button>
+      <div className="d-flex justify-content-evenly mt-4 border-top pt-2 ">
+        <Button
+          className="border-0 fw-bolder my-0"
+          variant="outline-secondary"
+        >
+          <i class="fa-regular fa-thumbs-up"></i>
+          <br />
+          Consiglia
+        </Button>
+        <Button
+          className="border-0 fw-bolder my-0"
+          variant="outline-secondary"
+        >
+          <i class="fa-regular fa-comment"></i> <br />
+          Commenta
+        </Button>
+        <Button
+          className="border-0 fw-bolder my-0"
+          variant="outline-secondary"
+        >
+          <i class="fa-solid fa-retweet"></i> <br />
+          Diffondi il post
+        </Button>
+        <Button
+          className="border-0 fw-bolder my-0"
+          variant="outline-secondary"
+        >
+          <i class="fa-solid fa-paper-plane"></i> <br />
+          Invia
+        </Button>
       </div>
-    </div>
+    </Card>
   )
 }
 
