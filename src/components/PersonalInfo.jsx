@@ -111,7 +111,6 @@ const PersonalInfo = () => {
           <p>Amazing worker | Wherever</p>
         </div>
       </Col>
-      <FooterProfile />
     </>
   );
 };
