@@ -35,7 +35,7 @@ const TopBar = () => {
   const { isAuthenticated } = useSelector((state) => state.auth || {});
 
   return (
-    <Navbar expand="lg" className="linkedin-navbar bg-white shadow-sm">
+    <Navbar expand="lg" className="linkedin-navbar bg-white shadow-sm customNavbar">
       <Container fluid className="p-0">
         <Navbar.Brand href="#" className="me-1">
           <i className="bi bi-linkedin text-primary fs-2"></i>
@@ -46,7 +46,7 @@ const TopBar = () => {
             <i className="bi bi-search search-icon"></i>
             <Form.Control
               type="search"
-              placeholder="Cerca"
+              placeholder="Cerca Lavoro"
               className="search-input"
               aria-label="Cerca su LinkedIn"
               value={searchQuery}

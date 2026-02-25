@@ -26,6 +26,7 @@ const Jobs = () => {
       if (query.trim()) {
         url += `?search=${encodeURIComponent(query.trim())}`;
       }
+      url += `${query.trim() ? "&" : "?"}limit=15`;
 
       const res = await fetch(url);
       if (!res.ok) {
@@ -97,7 +98,10 @@ const Jobs = () => {
                         <img
                           src={
                             job.company_logo_url ||
-                            `https://ui-avatars.com/api/?name=${encodeURIComponent(job.company_name || "Company")}&background=random&size=80`
+                            job.company_logo ||
+                            `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                              job.company_name?.trim() || "Company",
+                            )}&background=0D8ABC&color=fff&size=80&rounded=true&bold=true`
                           }
                           alt={`${job.company_name || "Company"} logo`}
                           width={80}
@@ -106,6 +110,7 @@ const Jobs = () => {
                           style={{ objectFit: "contain", background: "#f3f2ef" }}
                           onError={(e) => {
                             e.target.src = "https://via.placeholder.com/80?text=Logo";
+                            e.target.onerror = null;
                           }}
                         />
                       </div>

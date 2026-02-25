@@ -46,7 +46,7 @@ const Footer = () => {
         </Col>
         <Col>
           <div className="d-flex gap-2">
-            <i class="bi bi-gear-fill"></i>
+            <i className="bi bi-gear-fill"></i>
             <div className="align-items-center gap-2">
               <h2 style={{ fontSize: "1rem", color: "#62615f", fontWeight: "bold" }}>Gestisci il tuo account e la tua privacy</h2>
               <p style={{ fontSize: "0.8rem", color: "#62615f" }}>Vai alle impostazioni</p>
