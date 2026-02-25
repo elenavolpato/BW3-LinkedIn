@@ -15,3 +15,8 @@
 .icon-company {
   width: 30px;
 }
+
+.imgOverlay {
+  top: -100px;
+  left: 19px;
+}
