@@ -4,7 +4,7 @@ import { fetchExperiences } from "../redux/actions/experienceActions"
 import { Card, Col, Row } from "react-bootstrap"
 import { monthAndYear, capitalizeFirstLetter } from "./Utils"
 
-const ExperienceList = (/* { userId } */) => {
+const ExperienceList = () => {
   const [userId, setUserId] = useState("653f5b02b397340014d5e7fa")
 
   const getUsers = () => {
@@ -49,7 +49,7 @@ const ExperienceList = (/* { userId } */) => {
     <Card className="p-3 position-relative mb-3">
       <h4 className="fw-bold p-1">Esperienza</h4>
       <div className="position-absolute fw-bold top-0 end-0 pt-3 pe-4">
-        <i class="bi bi-plus-lg fs-4 me-3"></i>
+        <i className="bi bi-plus-lg fs-4 me-3"></i>
         <i className="bi bi-pencil fs-5"></i>
       </div>
 
@@ -79,7 +79,7 @@ const ExperienceList = (/* { userId } */) => {
             )}
             <p className="">{exp.description}</p>
             <p className="fw-bold">
-              <i class="bi bi-gem"></i> &nbsp; Lavoratore incredibile,
+              <i className="bi bi-gem"></i> &nbsp; Lavoratore incredibile,
               Irresposabilità, Disorganizzazione{" "}
             </p>
           </div>

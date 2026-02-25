@@ -3,14 +3,13 @@ import { useSelector } from "react-redux"
 
 const LeftSidebar = () => {
   const profileData = useSelector((state) => state.profile?.profile)
-  const recentExperience = useSelector((state) => state.experiences?.list[1])
+  const recentExperience = useSelector((state) => state.experiences.list[1])
 
-  console.log("exp", recentExperience)
   const user = {
     nome: `${profileData.name}  ${profileData.surname}`,
     ruolo: profileData.title,
     luogo: profileData.area,
-    fotoProfilo: profileData.image,
+    fotoProfilo: profileData?.image,
     fotoCopertina: "https://placecats.com/300/200",
   }
 

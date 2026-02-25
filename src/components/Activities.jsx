@@ -17,7 +17,7 @@ const Activities = () => {
         </p>
       </CardBody>
       <div className="text-black-50 text-center pt-3 fw-bolder">
-        Mostra altro <i class="bi bi-arrow-right"></i>
+        Mostra altro <i className="bi bi-arrow-right"></i>
       </div>
     </Card>
   )

@@ -105,10 +105,7 @@ const Feed = () => {
         </Col>
 
         {/* colonna dx */}
-        <Col
-          md={3}
-          className="sticky-side"
-        >
+        <Col md={3}>
           <RightSideBar />
         </Col>
       </Row>

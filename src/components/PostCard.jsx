@@ -125,7 +125,7 @@ function PostCard(props) {
           className="border-0 fw-bolder my-0"
           variant="outline-secondary"
         >
-          <i class="fa-regular fa-thumbs-up"></i>
+          <i className="fa-regular fa-thumbs-up"></i>
           <br />
           Consiglia
         </Button>
@@ -133,21 +133,21 @@ function PostCard(props) {
           className="border-0 fw-bolder my-0"
           variant="outline-secondary"
         >
-          <i class="fa-regular fa-comment"></i> <br />
+          <i className="fa-regular fa-comment"></i> <br />
           Commenta
         </Button>
         <Button
           className="border-0 fw-bolder my-0"
           variant="outline-secondary"
         >
-          <i class="fa-solid fa-retweet"></i> <br />
+          <i className="fa-solid fa-retweet"></i> <br />
           Diffondi il post
         </Button>
         <Button
           className="border-0 fw-bolder my-0"
           variant="outline-secondary"
         >
-          <i class="fa-solid fa-paper-plane"></i> <br />
+          <i className="fa-solid fa-paper-plane"></i> <br />
           Invia
         </Button>
       </div>

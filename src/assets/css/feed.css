@@ -1,7 +1,0 @@
-.sticky-side {
-  position: sticky;
-  top: 75px;
-  /* distanza dall’alto (navbar) */
-  align-self: flex-start;
-  height: fit-content;
-}
