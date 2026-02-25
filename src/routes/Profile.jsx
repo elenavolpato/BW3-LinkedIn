@@ -1,23 +1,35 @@
-import { Container, Row, Col } from "react-bootstrap";
-import ExperienceList from "../components/ExperienceList";
-import PersonalInfo from "../components/PersonalInfo";
-import RightSidebarProfile from "../components/RightSidebarProfile";
-import FooterProfile from "../components/FooterProfile";
+import { Container, Row, Col } from "react-bootstrap"
+import ExperienceList from "../components/ExperienceList"
+import PersonalInfo from "../components/PersonalInfo"
+import RightSidebarProfile from "../components/RightSidebarProfile"
+import FooterProfile from "../components/FooterProfile"
+import FormazioneProfile from "../components/FormazioneProfile"
+import Activities from "../components/Activities"
 
 const Profile = () => {
   return (
     <Container className="pt-3">
       <Row>
-        <Col lg={9} md={10} sx={12}>
+        <Col
+          lg={9}
+          md={10}
+          sx={12}
+        >
           <PersonalInfo />
           <ExperienceList />
-          <FooterProfile />
+          <FormazioneProfile />
+          <Activities />
         </Col>
-        <Col lg={3} md={2} className="d-none d-lg-block">
+        <Col
+          lg={3}
+          md={2}
+          className="d-none d-lg-block"
+        >
           <RightSidebarProfile />
         </Col>
       </Row>
+      <FooterProfile />
     </Container>
-  );
-};
-export default Profile;
+  )
+}
+export default Profile
