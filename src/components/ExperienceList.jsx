@@ -5,7 +5,7 @@ import { Card, Col, Row } from "react-bootstrap"
 import { monthAndYear, capitalizeFirstLetter } from "./Utils"
 
 const ExperienceList = () => {
-  const [userId, setUserId] = useState("653f5b02b397340014d5e7fa")
+  const [userId, setUserId] = useState("6552122bc55e7e0018f83c2c")
 
   const getUsers = () => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/", {
@@ -22,6 +22,7 @@ const ExperienceList = () => {
       })
       .then((data) => {
         setUserId(data[26]._id)
+        console.log(userId)
       })
       .catch((err) => {
         console.error(err)

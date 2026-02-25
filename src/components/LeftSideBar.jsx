@@ -1,10 +1,12 @@
+import { useEffect } from "react"
 import { Card, ListGroup } from "react-bootstrap"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchExperiences } from "../redux/actions/experienceActions"
 
 const LeftSidebar = () => {
   const profileData = useSelector((state) => state.profile?.profile)
   const recentExperience = useSelector((state) => state.experiences.list[1])
-
+  const dispatch = useDispatch()
   const user = {
     nome: `${profileData.name}  ${profileData.surname}`,
     ruolo: profileData.title,
@@ -12,6 +14,11 @@ const LeftSidebar = () => {
     fotoProfilo: profileData?.image,
     fotoCopertina: "https://placecats.com/300/200",
   }
+
+  useEffect(() => {
+    dispatch(fetchExperiences())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     // CARD 1
@@ -43,14 +50,16 @@ const LeftSidebar = () => {
             <p className="small my-1">{user.ruolo}</p>
             <p className="text-muted small">{user.luogo}</p>
           </div>
-          <div className="d-flex align-items-start gap-2 no-margin">
-            <img
-              src={recentExperience.image}
-              alt={`${recentExperience.company} image`}
-              className="company-image rounded-1"
-            />
-            <p className="fw-bolder">{recentExperience.role} </p>
-          </div>
+          {recentExperience && (
+            <div className="d-flex align-items-start gap-2 no-margin">
+              <img
+                src={recentExperience.image}
+                alt={`${recentExperience.company} image`}
+                className="company-image rounded-1"
+              />
+              <p className="fw-bolder">{recentExperience.role} </p>
+            </div>
+          )}
         </Card.Body>
       </Card>
 
