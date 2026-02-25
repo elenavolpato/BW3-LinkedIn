@@ -1,13 +1,10 @@
-.footer-profilo {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+.footer-profilo ul {
+  padding-left: 10px;
 }
 
-.footer-profilo a {
-  text-decoration: none;
-  color: #62615f;
+.footer-profilo ul li {
+  list-style: none;
+  margin-bottom: 0.5em;
 }
 
 .dropdown-class {

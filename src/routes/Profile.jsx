@@ -19,7 +19,6 @@ const Profile = () => {
           <ExperienceList />
           <FormazioneProfile />
           <Activities />
-          <FooterProfile />
         </Col>
         <Col
           lg={3}
@@ -29,6 +28,7 @@ const Profile = () => {
           <RightSidebarProfile />
         </Col>
       </Row>
+      <FooterProfile />
     </Container>
   )
 }
