@@ -43,19 +43,19 @@ const RightSideBarProfile = () => {
     <>
       <Container className="container-right-sidebar-profile d-flex flex-column bg-white p-3 " xs={1}>
         <div className="lingua-profilo">
-          <div className="d-flex align-items-center justify-content-between gap-2">
+          <div className="d-flex align-items-center justify-content-between gap-2 ">
             <h2>Lingua del profilo</h2>
             <i className="bi bi-pencil"></i>
           </div>
           <span>Italiano</span>
         </div>
-        <div className="divider"></div>
+        <div className="divider  mt-3 pb-3"></div>
         <div className="lingua-profilo">
-          <div className="d-flex align-items-center justify-content-between gap-2">
+          <div className="d-flex align-items-center justify-content-between gap-2 ">
             <h2>Profilo Pubblico e URL</h2>
             <i className="bi bi-pencil"></i>
           </div>
-          <span>www.linkedin.com/in/magnificorettore-99999aura</span>
+          <span>www.linkedin.com/in/aeibrag</span>
         </div>
       </Container>
       <Card className="linkedin-sidebar mt-3">
