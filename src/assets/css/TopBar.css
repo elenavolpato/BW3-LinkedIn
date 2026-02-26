@@ -83,6 +83,14 @@
 .nav-item-custom:hover,
 .nav-item-custom:focus {
   color: #000000;
+  border-bottom: 2px solid black;
+}
+
+/* Per Dropdown menu Tu e Per le aziende cosi non hanno il border-bottom */
+.nav-item-custom2:hover,
+.nav-item-custom2:focus {
+  color: #000000;
+  border-bottom: 0px !important;
 }
 
 .nav-item-custom.active {
