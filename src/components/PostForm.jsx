@@ -110,8 +110,9 @@ function PostForm({ onPostCreated }) {
         {/* mostra campo inserisci immagine */}
         <div>
           {showImgInput && (
-            <div className="mt-2">
+            <div className=" fs-6 text-muted">
               <input
+                className="my-3 ms-5 d-block"
                 type="file"
                 accept="image/*"
                 onChange={(e) => setImageFile(e.target.files?.[0] ?? null)}
