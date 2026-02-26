@@ -86,7 +86,6 @@
   border-bottom: 2px solid black;
 }
 
-/* Per Dropdown menu Tu e Per le aziende cosi non hanno il border-bottom */
 .nav-item-custom2:hover,
 .nav-item-custom2:focus {
   color: #000000;
@@ -190,6 +189,36 @@
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+}
+
+.jobs-navbar .jobs-default-active {
+  color: #000 !important;
+  border-bottom: 2px solid black !important;
+  font-weight: 600;
+}
+
+.jobs-navbar:hover .nav-item-custom {
+  border-bottom: 2px solid transparent !important;
+  color: #666 !important;
+  font-weight: normal !important;
+}
+
+.jobs-navbar .nav-item-custom:hover {
+  border-bottom: 2px solid black !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
+.jobs-navbar .nav-item-custom2:hover,
+.jobs-navbar .nav-item-custom2:focus,
+.jobs-navbar .nav-item-custom2 {
+  border-bottom: 0 !important;
+}
+
+.jobs-navbar .nav-item-custom.active {
+  border-bottom: 2px solid black !important;
+  color: #000 !important;
+  font-weight: 600 !important;
 }
 
 @media (max-width: 991px) {
