@@ -6,6 +6,7 @@ import Profile from "./routes/Profile";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import ProtectedRoute from "./components/ProtectedRoute";
+import TopBar from "./components/TopBar";
 import LoginAuth from "./components/LoginAuth";
 import Layout from "./components/Layout";
 import Jobs from "./components/Jobs";

@@ -1,8 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
-import postUiReducer from "./reducers/postUiReducer";
-import authReducer from "./reducers/authReducer";
-import profileReducer from "./reducers/profileRecuder";
-import experiencesReducer from "./reducers/experiencesReducer";
+import { configureStore } from "@reduxjs/toolkit"
+import postUiReducer from "./reducers/postUiReducer"
+import authReducer from "./reducers/authReducer"
+import profileReducer from "./reducers/profileReducer"
+import experiencesReducer from "./reducers/experiencesReducer"
 
 export const store = configureStore({
   reducer: {
@@ -11,4 +11,4 @@ export const store = configureStore({
     profile: profileReducer,
     experiences: experiencesReducer,
   },
-});
+})

@@ -1,11 +1,11 @@
 import "../assets/css/NewsSidebarDx.css"
 
-const NewsSidebarDx = () => {
+const NewsSidebarDx = ({ title, text }) => {
   return (
     <div className="background-news">
       <div className="news-item">
-        <p>Usa: dazi al 15% per tutti</p>
-        <span>2h fa • 336 lettori</span>
+        <p>{title}</p>
+        <span>{text}</span>
       </div>
     </div>
   )

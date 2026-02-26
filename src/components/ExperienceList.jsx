@@ -4,8 +4,8 @@ import { fetchExperiences } from "../redux/actions/experienceActions";
 import { Card, Col, Row } from "react-bootstrap";
 import { monthAndYear, capitalizeFirstLetter } from "./Utils";
 
-const ExperienceList = (/* { userId } */) => {
-  const [userId, setUserId] = useState("653f5b02b397340014d5e7fa");
+const ExperienceList = () => {
+  const [userId, setUserId] = useState("6552122bc55e7e0018f83c2c");
 
   const getUsers = () => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/", {
@@ -22,6 +22,7 @@ const ExperienceList = (/* { userId } */) => {
       })
       .then((data) => {
         setUserId(data[26]._id);
+        console.log(userId);
       })
       .catch((err) => {
         console.error(err);
@@ -33,6 +34,7 @@ const ExperienceList = (/* { userId } */) => {
 
   useEffect(() => {
     getUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -65,7 +67,7 @@ const ExperienceList = (/* { userId } */) => {
             {exp.area && <p className="text-black-50 no-margin">{exp.area}, Italy</p>}
             <p className="">{exp.description}</p>
             <p className="fw-bold">
-              <i class="bi bi-gem"></i> &nbsp; Lavoratore incredibile, Irresposabilità, Disorganizzazione{" "}
+              <i className="bi bi-gem"></i> &nbsp; Lavoratore incredibile, Irresposabilità, Disorganizzazione{" "}
             </p>
           </div>
         </div>
