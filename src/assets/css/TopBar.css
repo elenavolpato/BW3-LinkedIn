@@ -124,7 +124,7 @@
   transform: rotate(180deg);
 }
 
-.profile-dropdown .dropdown-toggle>div:last-child {
+.profile-dropdown .dropdown-toggle > div:last-child {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
@@ -215,5 +215,11 @@
   .nav-profile-avatar {
     width: 32px;
     height: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  .customNavbar {
+    padding: 0px 3rem !important;
   }
 }

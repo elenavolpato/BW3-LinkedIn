@@ -1,36 +1,33 @@
-import { useState, useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
-import { loginUser } from "../redux/actions/loginAuth"
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { loginUser } from "../redux/actions/loginAuth";
 
 const Login = () => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const { loading, error, isAuthenticated } = useSelector((state) => state.auth)
-  const profileData = useSelector((state) => state.profile?.profile)
+  const { loading, error, isAuthenticated } = useSelector((state) => state.auth);
+  const profileData = useSelector((state) => state.profile?.profile);
 
   // Se già autenticato → redirect
   useEffect(() => {
     if (isAuthenticated && profileData) {
-      navigate("/", { replace: true })
+      navigate("/", { replace: true });
     }
-  }, [isAuthenticated, profileData, navigate])
+  }, [isAuthenticated, profileData, navigate]);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    dispatch(loginUser(username, password))
-  }
+    e.preventDefault();
+    dispatch(loginUser(username, password));
+  };
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
-      <div
-        className="card shadow p-4"
-        style={{ width: "380px" }}
-      >
+      <div className="card shadow p-4" style={{ width: "380px" }}>
         <div className="text-center mb-4">
           <i className="bi bi-linkedin text-primary fs-1"></i>
           <h2 className="mt-2">Accedi</h2>
@@ -41,33 +38,15 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Username</label>
-            <input
-              type="text"
-              className="form-control"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="mariorossi"
-              required
-            />
+            <input type="text" className="form-control" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="mariorossi" required />
           </div>
 
           <div className="mb-3">
             <label className="form-label">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="password123"
-              required
-            />
+            <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password123" required />
           </div>
 
-          <button
-            type="submit"
-            className="btn btn-primary w-100"
-            disabled={loading}
-          >
+          <button type="submit" className="btn btn-primary w-100" disabled={loading}>
             {loading ? "Accesso..." : "Accedi"}
           </button>
         </form>
@@ -81,7 +60,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

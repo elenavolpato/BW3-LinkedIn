@@ -1,6 +1,6 @@
-import { Col, Card, Row, Container } from "react-bootstrap"
+import { Col, Card, Row, Container } from "react-bootstrap";
 
-import "../assets/css/FormazioneProfile.css"
+import "../assets/css/FormazioneProfile.css";
 
 const education = [
   {
@@ -22,7 +22,7 @@ const education = [
     activities: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Java"],
     description: null,
   },
-]
+];
 
 const FormazioneProfile = function () {
   return (
@@ -37,19 +37,9 @@ const FormazioneProfile = function () {
         </div>
         <Card.Body className="p-0">
           {education.map((educ, index) => (
-            <div
-              className={`d-flex gap-3 p-4 ${index !== education.length - 1 ? "border-bottom" : ""}`}
-            >
-              <img
-                src={educ.img}
-                alt={educ.alt}
-                style={{ width: "50px" }}
-                className="align-self-start rounded-1"
-              />
-              <div
-                key={index}
-                className=""
-              >
+            <div className={`d-flex gap-3 p-4 ${index !== education.length - 1 ? "border-bottom" : ""}`}>
+              <img src={educ.img} alt={educ.alt} style={{ width: "50px" }} className="align-self-start rounded-1" />
+              <div key={index} className="">
                 <p className="fw-bold no-margin">{educ.institution}</p>
                 <p className="no-margin">{educ.degree} </p>
                 <p className="text-black-50 no-margin">{educ.period}</p>
@@ -65,7 +55,7 @@ const FormazioneProfile = function () {
         </Card.Body>
       </Card>
     </>
-  )
-}
+  );
+};
 
-export default FormazioneProfile
+export default FormazioneProfile;

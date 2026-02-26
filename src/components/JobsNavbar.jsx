@@ -10,11 +10,22 @@ import "../assets/css/TopBar.css";
 
 import { Button } from "react-bootstrap";
 import { logoutUser } from "../redux/actions/loginAuth";
+import { useState } from "react";
 
 const TopBar = () => {
   const profileData = useSelector((state) => state.profile?.profile);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const trimmedQuery = searchQuery.trim();
+    if (trimmedQuery) {
+      navigate(`/jobs?search=${encodeURIComponent(trimmedQuery)}`);
+    }
+  };
 
   const handleLogout = function () {
     dispatch(logoutUser());
@@ -24,17 +35,24 @@ const TopBar = () => {
   const { isAuthenticated } = useSelector((state) => state.auth || {});
 
   return (
-    <Navbar expand="lg" className="linkedin-navbar bg-white shadow-sm">
+    <Navbar expand="lg" className="linkedin-navbar bg-white shadow-sm customNavbar">
       <Container fluid className="p-0">
         <Navbar.Brand href="#" className="me-1">
           <i className="bi bi-linkedin text-primary fs-2"></i>
         </Navbar.Brand>
 
         <div className="linkedin-search-container flex-grow-1 mb-3 mb-md-0">
-          <div className="linkedin-search ">
+          <Form className="linkedin-search" onSubmit={handleSearch}>
             <i className="bi bi-search search-icon"></i>
-            <Form.Control type="search" placeholder="Cerca" className="search-input" aria-label="Cerca su LinkedIn" />
-          </div>
+            <Form.Control
+              type="search"
+              placeholder="Cerca Lavoro"
+              className="search-input"
+              aria-label="Cerca su LinkedIn"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </Form>
         </div>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -121,6 +139,7 @@ const TopBar = () => {
                 <span className="text-secondary">Account per la pubblicazione di offerte di lavoro</span>
               </NavDropdown.Item>
               <NavDropdown.Divider />
+
               {isAuthenticated && (
                 <NavDropdown.Item className="text-secondary" onClick={handleLogout}>
                   Esci
