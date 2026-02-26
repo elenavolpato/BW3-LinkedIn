@@ -78,7 +78,7 @@ const TopBar = () => {
               }
               id="profile-dropdown"
               align="end"
-              className="nav-item-custom no-caret"
+              className="nav-item-custom nav-item-custom2 no-caret"
             >
               <NavDropdown.Item>
                 <div className="d-flex gap-1" onClick={() => navigate("/profile")}>
@@ -140,7 +140,7 @@ const TopBar = () => {
               }
               id="profile-dropdown"
               align="end"
-              className="nav-item-custom no-caret px-0 py-0 border-start"
+              className="nav-item-custom nav-item-custom2 no-caret px-0 py-0 border-start"
             >
               <NavDropdown.Item href="#settings" className="mb-4">
                 <h3>Le mie app</h3>
