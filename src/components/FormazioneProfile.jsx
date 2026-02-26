@@ -27,35 +27,33 @@ const education = [
 const FormazioneProfile = function () {
   return (
     <>
-      <Container className="mb-5">
-        <Card className="mb-4">
-          <div className="p-3 d-flex justify-content-between">
-            <h3 className="mb-0">Formazione</h3>
-            <div>
-              <i className="bi bi-plus-lg fs-4 me-3"></i>
-              <i className="bi bi-pencil fs-4"></i>
-            </div>
+      <Card className="p-3 mb-3">
+        <div className=" d-flex justify-content-between">
+          <h4 className="fw-bold p-1 mb-0">Formazione</h4>
+          <div>
+            <i className="bi bi-plus-lg fs-4 me-3 "></i>
+            <i className="bi bi-pencil fs-5 "></i>
           </div>
-          <Card.Body className="p-0">
-            {education.map((educ, index) => (
-              <div key={index} className={`d-flex gap-3 p-4 ${index !== education.length - 1 ? "border-bottom" : ""}`}>
-                <img src={educ.img} alt={educ.alt} style={{ width: "50px" }} className="align-self-start rounded-1" />
-                <div className="">
-                  <p className="fw-bold no-margin">{educ.institution}</p>
-                  <p className="no-margin">{educ.degree} </p>
-                  <p className="text-black-50 no-margin">{educ.period}</p>
+        </div>
+        <Card.Body className="p-0">
+          {education.map((educ, index) => (
+            <div className={`d-flex gap-3 p-4 ${index !== education.length - 1 ? "border-bottom" : ""}`}>
+              <img src={educ.img} alt={educ.alt} style={{ width: "50px" }} className="align-self-start rounded-1" />
+              <div key={index} className="">
+                <p className="fw-bold no-margin">{educ.institution}</p>
+                <p className="no-margin">{educ.degree} </p>
+                <p className="text-black-50 no-margin">{educ.period}</p>
 
-                  {/*  <p className="fw-bold">
+                {/*  <p className="fw-bold">
                   {educ.activities.map((act) => (
                     <span>{act} &nbsp;</span>
                   ))}
                 </p> */}
-                </div>
               </div>
-            ))}
-          </Card.Body>
-        </Card>
-      </Container>
+            </div>
+          ))}
+        </Card.Body>
+      </Card>
     </>
   );
 };
