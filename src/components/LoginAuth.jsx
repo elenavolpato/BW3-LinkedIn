@@ -11,13 +11,14 @@ const Login = () => {
   const navigate = useNavigate();
 
   const { loading, error, isAuthenticated } = useSelector((state) => state.auth);
+  const profileData = useSelector((state) => state.profile?.profile);
 
   // Se già autenticato → redirect
   useEffect(() => {
-    if (isAuthenticated) {
-      navigate("/profile");
+    if (isAuthenticated && profileData) {
+      navigate("/", { replace: true });
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, profileData, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

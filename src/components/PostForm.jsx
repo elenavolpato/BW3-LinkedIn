@@ -1,6 +1,6 @@
-import '../assets/css/PostForm.css'
-import { Alert, Spinner } from 'react-bootstrap';
-import { useState } from "react";
+import "../assets/css/PostForm.css"
+import { Alert, Spinner } from "react-bootstrap"
+import { useState } from "react"
 
 function PostForm({ onPostCreated }) {
   // caricamento testo del post
@@ -144,4 +144,4 @@ function PostForm({ onPostCreated }) {
   )
 }
 
-export default PostForm;
+export default PostForm

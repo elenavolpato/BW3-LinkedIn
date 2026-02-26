@@ -13,7 +13,8 @@ const Feed = () => {
   const [error, setError] = useState(null)
 
   const fetchURL = "https://striveschool-api.herokuapp.com/api/posts/"
-  const apiKEy = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
+  const apiKEy =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
 
   const getPosts = () => {
     setLoading(true)
@@ -32,11 +33,11 @@ const Feed = () => {
         }
       })
       .then((data) => {
+        const sortedPosts = [...data].sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+        )
+        const limit = sortedPosts.slice(0, 20)
 
-        const sortedPosts = [...data].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        const limit = sortedPosts.slice(0, 20);
-
-        console.log(limit)
         setLoading(false)
         setPosts(limit)
       })
@@ -54,22 +55,25 @@ const Feed = () => {
 
   return (
     // post
-    <Container className="feed-container">
+    <Container className="pt-3">
       <Row className="justify-content-center">
         {/* colonna sx */}
-        <Col md={3} className="sticky-side" >
+        <Col
+          md={3}
+          className="sticky-side"
+        >
           <LeftSidebar />
         </Col>
 
         {/* colonna centrale */}
-        <Col md={6}>
-          <PostForm
-            onPostCreated={getPosts}
-          />
-          <hr />
+        <Col
+          md={6}
+          className="no-margin"
+        >
+          <PostForm onPostCreated={getPosts} />
           {loading ? (
             <Spinner
-              className="d-block mx-auto mt-5"
+              className="d-block mx-auto mt-3"
               animation="border"
             />
           ) : error ? (
@@ -82,6 +86,7 @@ const Feed = () => {
           ) : (
             posts.map((post) => (
               <PostCard
+                className="mb-3"
                 key={post._id}
                 id={post._id}
                 name={
@@ -100,7 +105,7 @@ const Feed = () => {
         </Col>
 
         {/* colonna dx */}
-        <Col md={3} className="sticky-side">
+        <Col md={3}>
           <RightSideBar />
         </Col>
       </Row>

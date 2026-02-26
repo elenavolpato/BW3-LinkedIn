@@ -24,9 +24,10 @@ body {
   color: #62615f;
 }
 
-.dropdown-toggle {
+.dropdown-footer {
   background-color: transparent;
   border: none;
   color: #62615f;
   padding: 0;
+  font-size: 13px !important;
 }
