@@ -71,6 +71,7 @@ const Feed = () => {
           className="no-margin"
         >
           <PostForm onPostCreated={getPosts} />
+          <hr />
           {loading ? (
             <Spinner
               className="d-block mx-auto mt-3"
