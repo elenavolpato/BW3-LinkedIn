@@ -90,7 +90,8 @@ function PostForm({ onPostCreated }) {
           />
         </div>
         <div className="form-actions">
-          <button className="post-button fw-bolder text-secondary">
+          <button
+            className="post-button fw-bolder text-secondary">
             <i className="bi bi-play-btn-fill green-color me-1"></i>Video
           </button>
           <button
@@ -109,7 +110,8 @@ function PostForm({ onPostCreated }) {
           </button>
           <button
             className="post-button fw-bolder text-secondary"
-            onClick={handleSubmit}>
+            onClick={handleSubmit}
+          >
             <i className="bi bi-chat-right-text-fill orange-color me-1"></i>
             Posta
           </button>
