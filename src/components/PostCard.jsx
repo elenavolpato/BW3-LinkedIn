@@ -47,17 +47,6 @@ function PostCard(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.description, expanded, lines])
 
-  // per adaattarlo responsivamente
-  useEffect(() => {
-    const onResize = () => {
-      const next = computeShouldShow()
-      setShowToggle((prev) => (prev === next ? prev : next))
-    }
-
-    window.addEventListener("resize", onResize)
-    return () => window.removeEventListener("resize", onResize)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.description, expanded, lines])
 
   return (
     <Card className="p-3 mb-3">
@@ -106,7 +95,7 @@ function PostCard(props) {
         {props.img ? (
           <img
             className="post-media-img"
-            src={props.image}
+            src={props.img}
             alt="contenuto del post"
           />
         ) : props.video ? (
@@ -114,8 +103,8 @@ function PostCard(props) {
             className="post-media-video"
             src={props.video}
             controls
-            preload
-          ></video>
+            preload="metadata"
+          />
         ) : null}
       </div>
 

@@ -1,7 +1,6 @@
-import { Container } from "react-bootstrap"
-import "../assets/css/RightSidebarProfile.css"
-import { Card, Button, Image } from "react-bootstrap"
-import { PersonPlusFill, ShieldFillCheck } from "react-bootstrap-icons"
+import { Container } from "react-bootstrap";
+import "../assets/css/RightSidebarProfile.css";
+import { Card, Button, Image } from "react-bootstrap";
 
 const users = [
   {
@@ -37,15 +36,12 @@ const users = [
     img: null,
     verified: true,
   },
-]
+];
 
 const RightSideBarProfile = () => {
   return (
     <>
-      <Container
-        className="container-right-sidebar-profile d-flex flex-column bg-white p-3 "
-        xs={1}
-      >
+      <Container className="container-right-sidebar-profile d-flex flex-column bg-white p-3 " xs={1}>
         <div className="lingua-profilo">
           <div className="d-flex align-items-center justify-content-between gap-2 ">
             <h2>Lingua del profilo</h2>
@@ -68,38 +64,19 @@ const RightSideBarProfile = () => {
           <p className="sidebar-subtitle">Dalla tua scuola o università</p>
 
           {users.map((user) => (
-            <div
-              key={user.id}
-              className="user-item"
-            >
+            <div key={user.id} className="user-item">
               <div className="user-info">
-                {user.img ? (
-                  <Image
-                    src={user.img}
-                    roundedCircle
-                    className="user-avatar"
-                  />
-                ) : (
-                  <div className="avatar-placeholder">
-                    {user.initial || "U"}
-                  </div>
-                )}
+                {user.img ? <Image src={user.img} roundedCircle className="user-avatar" /> : <div className="avatar-placeholder">{user.initial || "U"}</div>}
 
                 <div className="user-text">
                   <div className="user-name">
                     {user.name}
-                    {user.verified && (
-                      <ShieldFillCheck className="verified-icon" />
-                    )}
+                    {user.verified && <i className="bi bi-shield-fill-check verified-icon"></i>}
                   </div>
                   <div className="user-role">{user.role}</div>
 
-                  <Button
-                    variant="outline-secondary"
-                    size="sm"
-                    className="connect-btn"
-                  >
-                    <PersonPlusFill className="me-1" />
+                  <Button variant="outline-secondary" size="sm" className="connect-btn">
+                    <i className="bi bi-person-plus-fill me-1"></i>
                     Collegati
                   </Button>
                 </div>
@@ -111,7 +88,7 @@ const RightSideBarProfile = () => {
         </Card.Body>
       </Card>
     </>
-  )
-}
+  );
+};
 
-export default RightSideBarProfile
+export default RightSideBarProfile;
