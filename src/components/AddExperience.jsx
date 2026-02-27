@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Form, Row, Col, Button, Modal } from "react-bootstrap";
 import { monthsNames } from "./Utils";
+import { fetchExperiences } from "../redux/actions/experienceActions";
+import { useDispatch, useSelector } from "react-redux";
 
 function AddExperience({ show, onClose, onSave }) {
   const [formData, setFormData] = useState({
@@ -15,6 +17,9 @@ function AddExperience({ show, onClose, onSave }) {
     descrizione: "",
   });
 
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.profile?.profile._id);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
@@ -27,6 +32,7 @@ function AddExperience({ show, onClose, onSave }) {
   const handleSave = () => {
     //"saved data", formData);
     onSave(formData);
+    dispatch(fetchExperiences(userId));
   };
   return (
     <>
@@ -102,6 +108,7 @@ function AddExperience({ show, onClose, onSave }) {
                   placeholder="Anno*"
                   value={formData.annoInizio}
                   onChange={handleChange}
+                  required
                 />
               </Col>
             </Row>
@@ -112,6 +119,7 @@ function AddExperience({ show, onClose, onSave }) {
                 placeholder="Es: Milano, Italia"
                 value={formData.localita}
                 onChange={handleChange}
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -136,6 +144,7 @@ function AddExperience({ show, onClose, onSave }) {
                 maxLength={2000}
                 value={formData.descrizione}
                 onChange={handleChange}
+                required
               />
               <div className="text-end small text-muted">
                 {formData.descrizione.length}/2000
