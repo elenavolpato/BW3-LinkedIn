@@ -4,7 +4,8 @@ export const monthsNames = [
   "Marzo",
   "Aprile",
   "Maggio",
-  "Giulio",
+  "Giugno",
+  "Luglio",
   "Agosto",
   "Settembre",
   "Ottobre",
@@ -13,9 +14,11 @@ export const monthsNames = [
 ];
 
 export const monthAndYear = (date) => {
-  const month = new Date(date).getMonth();
-  const year = new Date(date).getFullYear();
-  return `${monthsNames[month].slice(0, 2)} ${year}`;
+  console.log("date", date);
+  const d = new Date(date);
+  const month = d.getUTCMonth();
+  const year = d.getUTCFullYear();
+  return `${monthsNames[month] ? monthsNames[month].slice(0, 3) : ""} ${year}`;
 };
 
 export const capitalizeFirstLetter = (exp) => {
@@ -26,5 +29,6 @@ export const capitalizeFirstLetter = (exp) => {
 
 export const getMonthNumber = (month) => {
   console.log(month);
+  console.log(monthsNames.findIndex((m) => m === month));
   return monthsNames.findIndex((m) => m === month);
 };

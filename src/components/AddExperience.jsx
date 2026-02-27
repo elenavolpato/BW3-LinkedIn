@@ -25,7 +25,7 @@ function AddExperience({ show, onClose, onSave }) {
   };
 
   const handleSave = () => {
-    console.log("saved data", formData);
+    //"saved data", formData);
     onSave(formData);
   };
   return (

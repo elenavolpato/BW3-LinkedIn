@@ -12,7 +12,6 @@ const ExperienceList = () => {
   const dispatch = useDispatch();
   const { list, loading, error } = useSelector((state) => state.experiences);
   const userId = useSelector((state) => state.profile?.profile._id);
-  console.log("id?", userId);
   const [showModal, setShowModal] = useState(false);
 
   const handleOpen = () => setShowModal(true);
@@ -24,7 +23,7 @@ const ExperienceList = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchExperiences());
+    dispatch(fetchExperiences(userId));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

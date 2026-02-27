@@ -5,15 +5,13 @@ export const FETCH_EXPERIENCES_SUCCESS = "FETCH_EXPERIENCES_SUCCESS";
 export const FETCH_EXPERIENCES_FAILURE = "FETCH_EXPERIENCES_FAILURE";
 export const ADD_EXPERIENCE = "ADD_EXPERIENCE";
 
-export const fetchExperiences = () => async (dispatch) => {
+export const fetchExperiences = (userId) => async (dispatch) => {
   const token = localStorage.getItem("token");
-  const userId = localStorage.getItem("userId");
-  console.log(userId);
   //
   // usando ID fisso per avere esperienze nell profilo
   dispatch({ type: FETCH_EXPERIENCES_REQUEST });
   fetch(
-    `https://striveschool-api.herokuapp.com/api/profile/6552122bc55e7e0018f83c2c/experiences`,
+    `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -32,7 +30,7 @@ export const fetchExperiences = () => async (dispatch) => {
         type: FETCH_EXPERIENCES_SUCCESS,
         payload: data,
       });
-      console.log("experiences", data);
+      //console.log("experiences", data);
     })
 
     .catch((error) => {
@@ -49,15 +47,16 @@ export const addExperience = (formData, userId) => {
 
   return (dispatch) => {
     const startDate = new Date(
-      `${formData.annoInizio}-${getMonthNumber(formData.meseInizio)}-01`,
+      `${formData.annoInizio}-${String(getMonthNumber(formData.meseInizio) + 1).padStart(2, "0")}-01`,
     ).toISOString();
+
     const payload = {
       area: formData.localita,
       company: formData.azienda,
       description: formData.descrizione,
       role: formData.titolo,
       startDate,
-      user: "6552122bc55e7e0018f83c2c",
+      user: userId,
       username: "FabioSimoDev",
       image:
         "https://epicode-testapi-bucket.s3.eu-south-1.amazonaws.com/1699897520575-epicodeschool_logo.jpg",
