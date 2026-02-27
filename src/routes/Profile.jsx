@@ -9,7 +9,7 @@ import ProfileAbout from "../components/ProfileAbout"
 
 const Profile = () => {
   return (
-    <Container className="pb-3">
+    <Container className="py-3">
       <Row>
         <Col
           lg={9}

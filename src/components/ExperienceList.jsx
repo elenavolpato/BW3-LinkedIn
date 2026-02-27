@@ -1,48 +1,18 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchExperiences } from "../redux/actions/experienceActions";
-import { Card, Col, Row } from "react-bootstrap";
-import { monthAndYear, capitalizeFirstLetter } from "./Utils";
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchExperiences } from "../redux/actions/experienceActions"
+import { Card, Col, Row } from "react-bootstrap"
+import { monthAndYear, capitalizeFirstLetter } from "./Utils"
 
 const ExperienceList = () => {
-  const [userId, setUserId] = useState("6552122bc55e7e0018f83c2c");
-
-  const getUsers = () => {
-    fetch("https://striveschool-api.herokuapp.com/api/profile/", {
-      headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_PROFILE_TOKEN}`,
-      },
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          throw new Error("Error fetching profiles");
-        }
-      })
-      .then((data) => {
-        setUserId(data[26]._id);
-        console.log(userId);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
-
-  const dispatch = useDispatch();
-  const { list, loading, error } = useSelector((state) => state.experiences);
+  const dispatch = useDispatch()
+  const { list, loading, error } = useSelector((state) => state.experiences)
 
   useEffect(() => {
-    getUsers();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    dispatch(fetchExperiences())
 
-  useEffect(() => {
-    if (userId) {
-      dispatch(fetchExperiences(userId));
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId]);
+  }, [])
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
