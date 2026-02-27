@@ -14,8 +14,8 @@ const ExperienceList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <Card className="p-3 position-relative mb-3">
@@ -26,39 +26,24 @@ const ExperienceList = () => {
       </div>
 
       {list.map((exp, index) => (
-        <div
-          className={`d-flex gap-3 p-4 ${index !== list.length - 1 ? "border-bottom" : ""}`}
-        >
-          <img
-            src={exp.image}
-            alt={`${exp.company} image`}
-            style={{ width: "50px" }}
-            className="align-self-start rounded-1"
-          />
-          <div
-            key={exp._id}
-            className=""
-          >
-            <p className="fw-bold no-margin">
-              {capitalizeFirstLetter(exp.role)}
-            </p>
+        <div className={`d-flex gap-3 p-4 ${index !== list.length - 1 ? "border-bottom" : ""}`}>
+          <img src={exp.image} alt={`${exp.company} image`} style={{ width: "50px" }} className="align-self-start rounded-1" />
+          <div key={exp._id} className="">
+            <p className="fw-bold no-margin">{capitalizeFirstLetter(exp.role)}</p>
             <p className="no-margin">{exp.company} · Tempo pieno </p>
             <p className="text-black-50 no-margin">
               {monthAndYear(exp.startDate)} - {monthAndYear(exp.updatedAt)}
             </p>
-            {exp.area && (
-              <p className="text-black-50 no-margin">{exp.area}, Italy</p>
-            )}
+            {exp.area && <p className="text-black-50 no-margin">{exp.area}, Italy</p>}
             <p className="">{exp.description}</p>
             <p className="fw-bold">
-              <i className="bi bi-gem"></i> &nbsp; Lavoratore incredibile,
-              Irresposabilità, Disorganizzazione{" "}
+              <i className="bi bi-gem"></i> &nbsp; Lavoratore incredibile, Irresposabilità, Disorganizzazione{" "}
             </p>
           </div>
         </div>
       ))}
     </Card>
-  )
-}
+  );
+};
 
-export default ExperienceList
+export default ExperienceList;

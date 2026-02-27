@@ -83,6 +83,13 @@
 .nav-item-custom:hover,
 .nav-item-custom:focus {
   color: #000000;
+  border-bottom: 2px solid black;
+}
+
+.nav-item-custom2:hover,
+.nav-item-custom2:focus {
+  color: #000000;
+  border-bottom: 0px !important;
 }
 
 .nav-item-custom.active {
@@ -124,7 +131,7 @@
   transform: rotate(180deg);
 }
 
-.profile-dropdown .dropdown-toggle>div:last-child {
+.profile-dropdown .dropdown-toggle > div:last-child {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
@@ -184,6 +191,36 @@
   cursor: pointer;
 }
 
+.jobs-navbar .jobs-default-active {
+  color: #000 !important;
+  border-bottom: 2px solid black !important;
+  font-weight: 600;
+}
+
+.jobs-navbar:hover .nav-item-custom {
+  border-bottom: 2px solid transparent !important;
+  color: #666 !important;
+  font-weight: normal !important;
+}
+
+.jobs-navbar .nav-item-custom:hover {
+  border-bottom: 2px solid black !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
+.jobs-navbar .nav-item-custom2:hover,
+.jobs-navbar .nav-item-custom2:focus,
+.jobs-navbar .nav-item-custom2 {
+  border-bottom: 0 !important;
+}
+
+.jobs-navbar .nav-item-custom.active {
+  border-bottom: 2px solid black !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
 @media (max-width: 991px) {
   .linkedin-navbar {
     height: auto;
@@ -215,5 +252,11 @@
   .nav-profile-avatar {
     width: 32px;
     height: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  .customNavbar {
+    padding: 0px 3rem !important;
   }
 }
