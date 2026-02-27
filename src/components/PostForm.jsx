@@ -81,7 +81,7 @@ function PostForm({ onPostCreated }) {
 
   return (
     <div>
-      <div className="post-form-container">
+      <div className="post-form-container mb-3">
         <div className="form-post">
           <img className="form-img" src="https://placedog.net/50/50" alt="" />
           <textarea
