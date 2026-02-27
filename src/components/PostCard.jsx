@@ -49,7 +49,7 @@ function PostCard(props) {
 
 
   return (
-    <Card className="p-3 mb-3">
+    <Card className="p-3 pb-0 mb-3">
       {/* caption */}
       <div className="post-caption">
         <img
@@ -109,9 +109,9 @@ function PostCard(props) {
       </div>
 
       {/* pulsanti */}
-      <div className="d-flex justify-content-evenly mt-4 border-top pt-2 ">
+      <div className="post-buttons ">
         <Button
-          className="border-0 fw-bolder my-0"
+          className="post-button fw-bolder"
           variant="outline-secondary"
         >
           <i className="fa-regular fa-thumbs-up"></i>
@@ -119,21 +119,21 @@ function PostCard(props) {
           Consiglia
         </Button>
         <Button
-          className="border-0 fw-bolder my-0"
+          className="post-button fw-bolder"
           variant="outline-secondary"
         >
           <i className="fa-regular fa-comment"></i> <br />
           Commenta
         </Button>
         <Button
-          className="border-0 fw-bolder my-0"
+          className="post-button fw-bolder"
           variant="outline-secondary"
         >
           <i className="fa-solid fa-retweet"></i> <br />
           Diffondi il post
         </Button>
         <Button
-          className="border-0 fw-bolder my-0"
+          className="post-button fw-bolder"
           variant="outline-secondary"
         >
           <i className="fa-solid fa-paper-plane"></i> <br />
