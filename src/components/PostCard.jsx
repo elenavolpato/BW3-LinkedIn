@@ -109,9 +109,9 @@ function PostCard(props) {
       </div>
 
       {/* pulsanti */}
-      <div className="post-buttons ">
+      <div className="post-buttons">
         <Button
-          className="post-button fw-bolder"
+          className="post-button fw-bolder text-secondary"
           variant="outline-secondary"
         >
           <i className="fa-regular fa-thumbs-up"></i>
@@ -119,21 +119,21 @@ function PostCard(props) {
           Consiglia
         </Button>
         <Button
-          className="post-button fw-bolder"
+          className="post-button fw-bolder text-secondary"
           variant="outline-secondary"
         >
           <i className="fa-regular fa-comment"></i> <br />
           Commenta
         </Button>
         <Button
-          className="post-button fw-bolder"
+          className="post-button fw-bolder text-secondary"
           variant="outline-secondary"
         >
           <i className="fa-solid fa-retweet"></i> <br />
           Diffondi il post
         </Button>
         <Button
-          className="post-button fw-bolder"
+          className="post-button fw-bolder text-secondary"
           variant="outline-secondary"
         >
           <i className="fa-solid fa-paper-plane"></i> <br />

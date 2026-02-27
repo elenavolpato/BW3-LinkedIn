@@ -90,12 +90,13 @@ function PostForm({ onPostCreated }) {
           />
         </div>
         <div className="form-actions">
-          <button className="post-button fw-bolder text-secondary">
+          <button
+            className="post-button fw-bolder text-secondary">
             <i className="bi bi-play-btn-fill green-color me-1"></i>Video
           </button>
           <button
             type="button"
-            className="post-button"
+            className="post-button fw-bolder text-secondary"
             onClick={() =>
               setShowImgInput((show) => {
                 const next = !show;
@@ -107,7 +108,10 @@ function PostForm({ onPostCreated }) {
             <i className="bi bi-image-fill blue-color me-1"> </i>
             Foto
           </button>
-          <button className="post-button" onClick={handleSubmit}>
+          <button
+            className="post-button fw-bolder text-secondary"
+            onClick={handleSubmit}
+          >
             <i className="bi bi-chat-right-text-fill orange-color me-1"></i>
             Posta
           </button>
