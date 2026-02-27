@@ -1,28 +1,50 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchExperiences } from "../redux/actions/experienceActions"
-import { Card, Col, Row } from "react-bootstrap"
-import { monthAndYear, capitalizeFirstLetter } from "./Utils"
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addExperience,
+  fetchExperiences,
+} from "../redux/actions/experienceActions";
+import { Card, Button } from "react-bootstrap";
+import { monthAndYear, capitalizeFirstLetter } from "./Utils";
+import AddExperience from "./AddExperience";
 
 const ExperienceList = () => {
-  const dispatch = useDispatch()
-  const { list, loading, error } = useSelector((state) => state.experiences)
+  const dispatch = useDispatch();
+  const { list, loading, error } = useSelector((state) => state.experiences);
+  const userId = useSelector((state) => state.profile?.profile._id);
+  console.log("id?", userId);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleOpen = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+
+  const handleSave = (formData) => {
+    dispatch(addExperience(formData, userId));
+    setShowModal(false);
+  };
 
   useEffect(() => {
-    dispatch(fetchExperiences())
+    dispatch(fetchExperiences());
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <Card className="p-3 position-relative mb-3">
       <h4 className="fw-bold p-1">Esperienza</h4>
       <div className="position-absolute fw-bold top-0 end-0 pt-3 pe-4">
-        <i className="bi bi-plus-lg fs-4 me-3"></i>
-        <i className="bi bi-pencil fs-5"></i>
+        <Button variant="outline-secondary" className="border-0 pe-0">
+          <i
+            className="bi bi-plus-lg fs-4 me-3"
+            onClick={() => handleOpen()}
+          ></i>
+        </Button>
+        <Button variant="outline-secondary" className="border-0 ">
+          <i className="bi bi-pencil fs-5"></i>
+        </Button>
       </div>
 
       {list.map((exp, index) => (
@@ -35,10 +57,7 @@ const ExperienceList = () => {
             style={{ width: "50px" }}
             className="align-self-start rounded-1"
           />
-          <div
-            key={exp._id}
-            className=""
-          >
+          <div key={exp._id} className="">
             <p className="fw-bold no-margin">
               {capitalizeFirstLetter(exp.role)}
             </p>
@@ -57,8 +76,13 @@ const ExperienceList = () => {
           </div>
         </div>
       ))}
+      <AddExperience
+        show={showModal}
+        onClose={handleClose}
+        onSave={handleSave}
+      />
     </Card>
-  )
-}
+  );
+};
 
-export default ExperienceList
+export default ExperienceList;
