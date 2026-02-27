@@ -1,6 +1,6 @@
-import "../assets/css/PostForm.css"
-import { Alert, Spinner } from "react-bootstrap"
-import { useState } from "react"
+import "../assets/css/PostForm.css";
+import { Alert, Spinner } from "react-bootstrap";
+import { useState } from "react";
 
 function PostForm({ onPostCreated }) {
   // caricamento testo del post
@@ -12,10 +12,9 @@ function PostForm({ onPostCreated }) {
   const [showImgInput, setShowImgInput] = useState(false);
   const [imageFile, setImageFile] = useState(null);
 
-  const fetchURL = 'https://striveschool-api.herokuapp.com/api/posts/'
-  const apiKEy = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40"
-
-
+  const fetchURL = "https://striveschool-api.herokuapp.com/api/posts/";
+  const apiKEy =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTljMTE1ODBiYzFkZTAwMTU3N2I3OWQiLCJpYXQiOjE3NzE4MzU3MzYsImV4cCI6MTc3MzA0NTMzNn0.sqNA4zaClXn_qt6yLcLVvYsT1sOeGx_2BmLmdLBSF40";
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -57,7 +56,8 @@ function PostForm({ onPostCreated }) {
           body: formData,
         })
           .then((uploadRes) => {
-            if (!uploadRes.ok) throw new Error("Errore nel caricamento immagine");
+            if (!uploadRes.ok)
+              throw new Error("Errore nel caricamento immagine");
             return uploadRes.json();
           })
           .then(() => {
@@ -66,7 +66,7 @@ function PostForm({ onPostCreated }) {
             setShowImgInput(false);
             setLoading(false);
 
-            onPostCreated?.(); // refetch di feed 
+            onPostCreated?.(); // refetch di feed
           });
       })
       .catch((err) => {
@@ -76,12 +76,9 @@ function PostForm({ onPostCreated }) {
       });
   }
 
-
-
-
   return (
     <div>
-      <div className="post-form-container">
+      <div className="post-form-container mb-3">
         <div className="form-post">
           <img className="form-img" src="https://placedog.net/50/50" alt="" />
           <textarea
@@ -93,19 +90,27 @@ function PostForm({ onPostCreated }) {
           />
         </div>
         <div className="form-actions">
-          <button className="post-button">Video</button>
+          <button className="post-button fw-bolder text-secondary">
+            <i className="bi bi-play-btn-fill green-color me-1"></i>Video
+          </button>
           <button
             type="button"
             className="post-button"
-            onClick={() => setShowImgInput((show) => {
-              const next = !show;
-              if (!next) setImageFile(null); // se nascondo input, resetto immagine
-              return next;
-            })}
-          >Foto</button>
-          <button className="post-button"
-            onClick={handleSubmit}
-          >Posta</button>
+            onClick={() =>
+              setShowImgInput((show) => {
+                const next = !show;
+                if (!next) setImageFile(null); // se nascondo input, resetto immagine
+                return next;
+              })
+            }
+          >
+            <i className="bi bi-image-fill blue-color me-1"> </i>
+            Foto
+          </button>
+          <button className="post-button" onClick={handleSubmit}>
+            <i className="bi bi-chat-right-text-fill orange-color me-1"></i>
+            Posta
+          </button>
         </div>
         {/* mostra campo inserisci immagine */}
         <div>
@@ -126,7 +131,13 @@ function PostForm({ onPostCreated }) {
             <img
               src={URL.createObjectURL(imageFile)}
               alt="preview"
-              style={{ width: "100%", maxHeight: 300, objectFit: "cover", borderRadius: "8px" }} />
+              style={{
+                width: "100%",
+                maxHeight: 300,
+                objectFit: "cover",
+                borderRadius: "8px",
+              }}
+            />
             <button
               type="button"
               className="post-button mt-2"
@@ -138,10 +149,16 @@ function PostForm({ onPostCreated }) {
         )}
       </div>
 
-      {loading && <Spinner className="d-block mx-auto mb-5" animation="border" role="status"></Spinner>}
+      {loading && (
+        <Spinner
+          className="d-block mx-auto mb-5"
+          animation="border"
+          role="status"
+        ></Spinner>
+      )}
       {error && <Alert variant="danger">Errore nel pubblicare il post</Alert>}
     </div>
-  )
+  );
 }
 
-export default PostForm
+export default PostForm;
