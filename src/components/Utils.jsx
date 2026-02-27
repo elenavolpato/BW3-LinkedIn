@@ -14,7 +14,6 @@ export const monthsNames = [
 ];
 
 export const monthAndYear = (date) => {
-  console.log("date", date);
   const d = new Date(date);
   const month = d.getUTCMonth();
   const year = d.getUTCFullYear();

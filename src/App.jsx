@@ -10,6 +10,7 @@ import TopBar from "./components/TopBar";
 import LoginAuth from "./components/LoginAuth";
 import Layout from "./components/Layout";
 import Jobs from "./components/Jobs";
+import ExperienceEdit from "./components/ExperiencesEdit";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
                 <Route path="/" element={<Feed />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/jobs" element={<Jobs />} />
+                <Route
+                  path="/profile/:userId/experiences"
+                  element={<ExperienceEdit />}
+                />
               </Route>
             </Route>
           </Routes>

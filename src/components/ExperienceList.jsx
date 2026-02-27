@@ -7,13 +7,17 @@ import {
 import { Card, Button } from "react-bootstrap";
 import { monthAndYear, capitalizeFirstLetter } from "./Utils";
 import AddExperience from "./AddExperience";
+import { useNavigate } from "react-router-dom";
 
 const ExperienceList = () => {
+  // redux imports
   const dispatch = useDispatch();
   const { list, loading, error } = useSelector((state) => state.experiences);
   const userId = useSelector((state) => state.profile?.profile._id);
-  const [showModal, setShowModal] = useState(false);
 
+  const navigate = useNavigate();
+
+  const [showModal, setShowModal] = useState(false);
   const handleOpen = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
 
@@ -41,7 +45,11 @@ const ExperienceList = () => {
             onClick={() => handleOpen()}
           ></i>
         </Button>
-        <Button variant="outline-secondary" className="border-0 ">
+        <Button
+          variant="outline-secondary"
+          className="border-0"
+          onClick={() => navigate(`/profile/${userId}/experiences`)}
+        >
           <i className="bi bi-pencil fs-5"></i>
         </Button>
       </div>
